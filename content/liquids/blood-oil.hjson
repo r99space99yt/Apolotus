@@ -1,0 +1,15 @@
+{
+  type: CellLiquid
+  moveThroughBlocks: false
+  canStayOn: []
+  incinerable: false
+  spreadDamage: 50
+  capPuddles: true
+  maxSpread: 0.2
+  name: blood oil
+  description: A bit viscosity liquid.
+  temperature: 0.1
+  coolant: false
+  color: 880000
+  viscosity: 0.6
+}

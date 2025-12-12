@@ -1,0 +1,73 @@
+type: flying
+health: 55
+speed: 1.5
+flying: true
+hitSize: 1
+engineOffset: 8
+engineSize: 3
+rotateSpeed: 10
+mineSpeed: 1
+buildSpeed: 2
+mineTier: 1
+drag: 0.06
+accel: 0.3
+defaultController: minerAI
+        mineItems: [
+        copper
+        lead
+        titanium
+        ]
+targetGround: true
+targetAir: true
+weapons:[
+{
+name: Basic-MiniGun
+  x: 2
+  y: 5
+  reload: 10
+  ejectEffect: none
+  shootSound: duo
+  rotate: true
+  mirror: true
+  bullet: {
+    type: SapBulletType
+    sapStrength: 1
+    length: 110
+    damage: 30
+    shootEffect: shootSmall
+    hitColor: D6FF33
+    color: FFE70F
+    despawnEffect: none
+    width: 0.7
+    lifetime: 20
+    knockback: 5
+  }
+}
+]
+abilities: [
+        {
+        type: mindustry.entities.abilities.RepairFieldAbility
+        healEffect: {
+        type: WaveEffect
+        lifetime: 50
+        sizeFrom: 0
+        sizeTo: 20
+        strokeFrom: 5
+        strokeTo: 0
+        lightColor: 73FFAEFF
+        colorFrom: 73FFAEFF
+        colorTo: 57D993FF
+        }
+        range: 40
+        amount: 3
+        reload: 70
+            },
+  {
+  type: LiquidExplodeAbility
+  liquid: blood-oil
+  amount: 0.5
+  }
+    ]
+outlineSize: 1
+outlineColor: 303a45
+itemCapacity: 24

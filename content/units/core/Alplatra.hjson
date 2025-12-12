@@ -1,0 +1,113 @@
+type: flying
+health: 105
+speed: 3
+flying: true
+hitSize: 1.5
+engineOffset: 15
+engineSize: 4
+rotateSpeed: 20
+mineSpeed: 2
+buildSpeed: 4
+mineTier: 2
+drag: 0.03
+accel: 0.7
+defaultController: minerAI
+        mineItems: [
+        copper
+        lead
+        titanium
+        ]
+targetGround: true
+targetAir: true
+weapons:[
+{
+name: Basic-MiniGun
+  x: 8.5
+  y: 4
+  reload: 10
+  ejectEffect: none
+  shootSound: duo
+  rotate: true
+  mirror: true
+  bullet: {
+        type: BasicBulletType
+        sprite: "apolotus-lycosid-bullet"
+        frontColor: ffbb00
+        hitSound: explosion
+        hitShake: 1
+        hitEffect: instBomb
+        backColor: 997700
+        width: 10
+        height: 10
+        speed: 3
+        lifetime: 200
+        scaleLife: true
+        damage: 50
+        spin: 10
+        pierce: true
+        pierceBuilding: false
+        buildingDamageMultiplier: 0.95
+  }
+},
+{
+name: Big-MiniGun
+  x: 7.5
+  y: 4.5
+  reload: 7
+  ejectEffect: none
+  shootSound: duo
+  rotate: true
+  mirror: true
+  bullet: {
+    type: SapBulletType
+    sapStrength: 3
+    length: 110
+    damage: 30
+    shootEffect: shootSmall
+    hitColor: D6FF33
+    color: FFE70F
+    despawnEffect: none
+    width: 0.7
+    lifetime: 20
+    knockback: 5
+  }
+}
+]
+abilities: [
+      {
+	    type: EnergyFieldAbility
+	     maxTargets: 10
+	     range: 25
+        orbRadius: 2
+	     color: 9900BBFF
+	     damage: 10
+	     reload: 10
+        y:3
+        color: a93e3e
+        sectors: 3
+	    },
+        {
+        type: mindustry.entities.abilities.RepairFieldAbility
+        healEffect: {
+        type: WaveEffect
+        lifetime: 50
+        sizeFrom: 0
+        sizeTo: 20
+        strokeFrom: 5
+        strokeTo: 0
+        lightColor: 73FFAEFF
+        colorFrom: 73FFAEFF
+        colorTo: 57D993FF
+        }
+        range: 40
+        amount: 3
+        reload: 70
+            },
+  {
+  type: LiquidExplodeAbility
+  liquid: blood-oil
+  amount: 1
+  }
+    ]
+outlineColor: 303a45
+itemCapacity: 24
