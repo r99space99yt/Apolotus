@@ -1,0 +1,10 @@
+type: Wall
+health: 9289
+size: 1
+research: apolotus-aparas
+description: SUPER STRONG WALL
+requirements: [
+  lead/10000
+  copper/4000
+  silicon/10
+]
