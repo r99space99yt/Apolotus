@@ -21,12 +21,12 @@ targetGround: true
 targetAir: true
 weapons:[
 {
-name: Basic-MiniGun
+name: Big-MiniGun
   x: 8.5
   y: 4
   reload: 10
   ejectEffect: none
-  shootSound: duo
+  shootSound: "pew"
   rotate: true
   mirror: true
   bullet: {
@@ -50,12 +50,12 @@ name: Basic-MiniGun
   }
 },
 {
-name: Big-MiniGun
+name: Basic-MiniGun
   x: 7.5
   y: 4.5
   reload: 7
   ejectEffect: none
-  shootSound: duo
+  shootSound: "laser"
   rotate: true
   mirror: true
   bullet: {
