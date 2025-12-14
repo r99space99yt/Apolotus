@@ -1,0 +1,67 @@
+type: legs
+health: 100000
+legDamage:100
+speed: 5
+hitSize: 30
+legLength: 125
+legCount:75
+immunities: [
+		burning
+		]
+weapons: [
+{
+  name: Gorgoncannon
+  x: 0
+  y: 0
+  mirror: false
+  top: false
+  shake: 4
+  shootY: 8
+  reload: 160
+  recoil: 0
+  chargeSound: lasercharge2
+  shootSound: beam
+  continuous: true
+  cooldownTime: 200
+  bullet: {
+    type: ContinuousLaserBulletType
+    damage: 150
+    length: 500
+    hitEffect: hitMeltHeal
+    drawSize: 125
+    lifetime: 200
+    shake: 1
+    despawnEffect: smokeCloud
+    smokeEffect: none
+    incendChance: 0.15
+    incendSpread: 5
+    incendAmount: 1
+    healPercent: 2
+    collidesTeam: true
+    colors: [
+      ff2222, ff4444, ff8888, ffffff
+    ]
+    status: slow
+    statusDuration: 120
+  }
+ }]
+      abilities: [
+        {
+        type: mindustry.entities.abilities.RepairFieldAbility
+        healEffect: {
+        type: WaveEffect
+        lifetime: 30
+        sizeFrom: 0
+        sizeTo: 5
+        strokeFrom: 2
+        strokeTo: 0
+        lightColor: 73FFA177
+        colorFrom: 73FFAEFF
+        colorTo: 57D993FF
+        }
+        range: 10
+        amount: 10
+        reload: 70
+            }
+    ]
+outlineColor: bbbbbb11
