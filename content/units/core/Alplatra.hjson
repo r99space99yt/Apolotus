@@ -79,7 +79,6 @@ abilities: [
 	    type: EnergyFieldAbility
 	     maxTargets: 10
 	     range: 25
-        orbRadius: 2
 	     color: 9900BBFF
 	     damage: 10
 	     reload: 10
@@ -111,4 +110,4 @@ abilities: [
   }
     ]
 outlineColor: 303a45
-itemCapacity: 24
+itemCapacity: 50
