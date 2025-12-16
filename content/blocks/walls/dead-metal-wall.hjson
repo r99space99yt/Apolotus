@@ -2,11 +2,12 @@ type: Wall
 name: Dead Matter Wall
 health: 9289
 size: 1
-research: apolotus-aparas
+research: apolotus-Aparas
 description: SUPER STRONG WALL
 requirements: [
-  lead/10000
-  copper/4000
-  silicon/10
+  lead/1000
+  copper/400
+  silicon/100
+  living-matter/10
 ]
 category: defense
