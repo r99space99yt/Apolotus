@@ -69,6 +69,5 @@ abilities: [
   amount: 0.5
   }
     ]
-outlineSize: 1
 outlineColor: 303a45
 itemCapacity: 24
