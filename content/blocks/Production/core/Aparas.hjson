@@ -12,5 +12,5 @@ requirements: [
   living-matter/10
 ] 
 category: effect
-research: apolotus-Apolotal
-researchCostMultiplier: 0.25
+research: apolotus-orbiter
+researchCostMultiplier: 2
