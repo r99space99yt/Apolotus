@@ -1,7 +1,6 @@
 name: DoomDayMachine
 type: legs
 health: 100000
-legDamage:100
 speed: 5
 hitSize: 30
 legLength: 125
