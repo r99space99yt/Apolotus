@@ -1,0 +1,13 @@
+type: Wall
+name: Living Matter Wall
+health: 500
+size: 1
+research: apolotus-Aparas
+description: SUPER STRONG WALL
+requirements: [
+  lead/100
+  copper/350
+  silicon/175
+  living-matter/200
+]
+category: defense
