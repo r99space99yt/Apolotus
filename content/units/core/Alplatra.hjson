@@ -82,7 +82,7 @@ abilities: [
 	     color: 9900BBFF
 	     damage: 10
 	     reload: 10
-        y:3
+        y:-1
         color: a93e3e
         sectors: 3
 	    },
@@ -109,5 +109,5 @@ abilities: [
   amount: 1
   }
     ]
-outline: false
+outlineColor: 00000000
 itemCapacity: 50
