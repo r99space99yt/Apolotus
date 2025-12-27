@@ -41,10 +41,6 @@ cloudMesh: [
    }
 ]
 
-allowCampaignRules: true
-allowLaunchLoadout: true
-allowLaunchSchematics: false
-
 # A planet generator. For (H)JSON planets it's pre-determined (AsteroidGenerator) and cannot be changed.
 # But you can at least modify the existing one's fields. Highly not recommended unless you REALLY know what you're doing,
 # better make sector presets and don't waste your time with this.
