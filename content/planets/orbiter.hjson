@@ -31,7 +31,7 @@ cloudMesh: [
    planet: frostnova
    seed: 3
    speed: 0.45
-   radius: 1.4
+   radius: 0.4
    divisions: 5
    color: e2effc60
    octaves: 3
@@ -84,7 +84,7 @@ defaultCore: apolotus-Aparas
 alwaysUnlocked: true
 # This determines the size of the sector grid.
 # Fun fact: The console will warn you about this "unknown" field, but it also functions properly at the same time.
-sectorSize: 2
+sectorSize: 2.5
 # Spacing between a parent (this) and satellites.
 orbitSpacing: 1
 orbitRadius: 25
