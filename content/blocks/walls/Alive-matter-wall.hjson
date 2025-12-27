@@ -5,8 +5,6 @@ size: 1
 research: apolotus-Aparas
 description: basic wall
 requirements: [
-  lead/10
-  copper/35
   silicon/75
   living-matter/20
 ]
