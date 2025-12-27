@@ -3,7 +3,6 @@
   difficulty: 2     
   alwaysUnlocked: true    
   addStartingItems: true   
-  useAI: false     
   showSectorLandInfo: true     
   planet: apolotus-orbiter
   name: LandZone
