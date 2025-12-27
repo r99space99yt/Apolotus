@@ -44,6 +44,7 @@ cloudMesh: [
 allowCampaignRules: true
 allowLaunchLoadout: true
 allowLaunchSchematics: false
+defaultCore:apolotus-aparas
 
 # A planet generator. For (H)JSON planets it's pre-determined (AsteroidGenerator) and cannot be changed.
 # But you can at least modify the existing one's fields. Highly not recommended unless you REALLY know what you're doing,
@@ -79,7 +80,6 @@ generator: {
   ferricChance: 0.1
 }
 
-defaultCore: apolotus-Aparas
 maxZoom: 5
 # Make sure this planet is always accessible anytime.
 alwaysUnlocked: true
