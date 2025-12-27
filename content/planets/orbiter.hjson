@@ -79,7 +79,8 @@ generator: {
   ferricChance: 0.1
 }
 
-defaultCore = apolotus-Aparas
+defaultCore: apolotus-Aparas
+maxZoom: 5
 # Make sure this planet is always accessible anytime.
 alwaysUnlocked: true
 # This determines the size of the sector grid.
