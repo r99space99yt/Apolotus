@@ -9,7 +9,7 @@ mesh: {
   # A number used for mesh generation.
   seed: 54
   # Mesh "quality". More divisions = more hexagons.
-  divisions: 5
+  divisions: 3.45
   # First color to be used.
   color1: bb1299
   # Second color to be used.
@@ -71,13 +71,13 @@ orbitRadius: 25
 orbitOffset: 180
 orbitTime: 25
 # Radius of this planet's sphere.
-radius: 2.5
+radius: 1.5
 # Whether to draw the orbit.
 drawOrbit: true
 # Whether this can be landed on.
 accessible: true
 # Toggle day-night cycle.
-updateLighting: true
+updateLighting: false
 # A number used for sector generation. If == -1, planet ID is picked instead.
 sectorSeed: 726
 # Whether this planet is blooming.
