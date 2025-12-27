@@ -2,7 +2,7 @@ type: Wall
 name: Dead Matter Wall
 health: 950
 size: 1
-research: apolotus-Aparas
+research: apolotus-Alive-matter-wall
 description: living matter wall but dead
 requirements: [
   silicon/50
