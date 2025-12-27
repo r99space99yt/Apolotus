@@ -2,7 +2,7 @@
   description: "Its spreding"  
   difficulty: 2     
   alwaysUnlocked: true    
-  addStartingItems: true   
+  addStartingItems: false   
   showSectorLandInfo: true     
   planet: apolotus-orbiter
   name: LandZone
