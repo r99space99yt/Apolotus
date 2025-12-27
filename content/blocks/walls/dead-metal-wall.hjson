@@ -6,7 +6,7 @@ research: apolotus-Aparas
 description: living matter wall but dead
 requirements: [
   silicon/50
-  living-matter/15
+  living-matter/35
 ]
 category: defense
 researchCostMultiplier: 2.5
