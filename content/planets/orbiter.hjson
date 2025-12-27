@@ -25,6 +25,25 @@ mesh: {
   # A noise property.
   mag: 1.5
 }
+cloudMesh: [
+   {
+   type: HexSkyMesh
+   planet: frostnova
+   seed: 3
+   speed: 0.45
+   radius: 1.4
+   divisions: 5
+   color: e2effc60
+   octaves: 3
+   persistence: 0.3
+   scl: 1
+   thresh: 0.45
+   }
+]
+
+allowCampaignRules: true
+allowLaunchLoadout: true
+allowLaunchSchematics: true
 
 # A planet generator. For (H)JSON planets it's pre-determined (AsteroidGenerator) and cannot be changed.
 # But you can at least modify the existing one's fields. Highly not recommended unless you REALLY know what you're doing,
@@ -60,6 +79,7 @@ generator: {
   ferricChance: 0.1
 }
 
+defaultCore: apolotus-Aparas
 # Make sure this planet is always accessible anytime.
 alwaysUnlocked: true
 # This determines the size of the sector grid.
