@@ -6,8 +6,7 @@ size: 3
 unitType: Apausale
 unitCapModifier: 25
 requirements: [
-  silicon/235
-  living-matter/310
+  living-matter/400
 ] 
 category: effect
 researchCostMultiplier: 0
