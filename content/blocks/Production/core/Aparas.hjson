@@ -12,4 +12,10 @@ requirements: [
   living-matter/10
 ] 
 category: effect
-researchCostMultiplier: 2
+researchCostMultiplier: 0
+research: {
+  planet: apolotus-orbiter
+  root: true
+  name: apolotal
+  requiresUnlock:false
+}
