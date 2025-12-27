@@ -1,5 +1,7 @@
-# Apolotus
-A mod add New Solar System! and many blocks
+![Logo]
+<br> <br>
+You got send to a planet as the 8th(?) and ur missions is to find them all...
+It seems alive..
 
 by Tweu (Tinnphat Dc) And Collaborator: Lucas Limit (microprocessordustry Dc)
 
@@ -7,3 +9,5 @@ by Tweu (Tinnphat Dc) And Collaborator: Lucas Limit (microprocessordustry Dc)
 
 
 
+<!----------------------------------[ Links ]--------------------------------->
+[Logo]: icon.png
