@@ -9,7 +9,7 @@ mesh: {
   # A number used for mesh generation.
   seed: 54
   # Mesh "quality". More divisions = more hexagons.
-  divisions: 4.5
+  divisions: 5.3
   # First color to be used.
   color1: bb1299
   # Second color to be used.
@@ -31,7 +31,7 @@ cloudMesh: [
    planet: frostnova
    seed: 3
    speed: 0.45
-   radius: 0.2
+   radius: -0.1
    divisions: 5
    color: fcecfc60
    octaves: 3
