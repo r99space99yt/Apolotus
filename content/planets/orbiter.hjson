@@ -21,7 +21,7 @@ mesh: {
   # A noise property.
   persistence: 0.8
   # Noise scale.
-  scale: 2.4
+  scale: 3.5
   # A noise property.
   mag: 1.5
 }
@@ -38,7 +38,7 @@ generator: {
   # Noise properties.
   octaves: 2
   persistence: 0.4
-  scale: 45
+  scale: 4.5
   mag: 0.4
   thresh: 2
   foct: 3
@@ -47,8 +47,8 @@ generator: {
   fper: 0.6
 
   # Asteroid radius range.
-  radMin: 5
-  radMax: 7
+  radMin: 3
+  radMax: 3.5
 
   # This one is ABSOLUTELY pointless, lmao.
   stoneChance: 0
@@ -64,7 +64,7 @@ generator: {
 alwaysUnlocked: true
 # This determines the size of the sector grid.
 # Fun fact: The console will warn you about this "unknown" field, but it also functions properly at the same time.
-sectorSize: 1.2
+sectorSize: 2
 # Spacing between a parent (this) and satellites.
 orbitSpacing: 1
 orbitRadius: 25
