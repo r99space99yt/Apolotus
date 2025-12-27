@@ -31,7 +31,7 @@ cloudMesh: [
    planet: frostnova
    seed: 3
    speed: 0.45
-   radius: -0.1
+   radius: 0.1
    divisions: 5
    color: fcecfc60
    octaves: 3
@@ -43,7 +43,7 @@ cloudMesh: [
 
 allowCampaignRules: true
 allowLaunchLoadout: true
-allowLaunchSchematics: true
+allowLaunchSchematics: false
 
 # A planet generator. For (H)JSON planets it's pre-determined (AsteroidGenerator) and cannot be changed.
 # But you can at least modify the existing one's fields. Highly not recommended unless you REALLY know what you're doing,
@@ -79,7 +79,7 @@ generator: {
   ferricChance: 0.1
 }
 
-defaultCore: apolotus-Aparas
+defaultCore: Aparas
 # Make sure this planet is always accessible anytime.
 alwaysUnlocked: true
 # This determines the size of the sector grid.
