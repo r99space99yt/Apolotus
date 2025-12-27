@@ -7,7 +7,7 @@ unitType: Alplatra
 unitCapModifier: 100
 requirements: [
   silicon/300
-  living-matter/650
+  living-matter/375
 ] 
 category: effect
 research: apolotus-Aparas
