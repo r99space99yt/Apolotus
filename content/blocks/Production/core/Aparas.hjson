@@ -4,12 +4,10 @@ health: 3000
 itemCapacity: 5000
 size: 3
 unitType: Apausale
-unitCapModifier: 100
+unitCapModifier: 25
 requirements: [
-  silicon/100
-  copper/250
-  titanium/300
-  living-matter/10
+  silicon/235
+  living-matter/650
 ] 
 category: effect
 researchCostMultiplier: 0
