@@ -11,4 +11,4 @@ requirements: [
 ] 
 category: effect
 research: apolotus-Aparas
-researchCostMultiplier: 2
+researchCostMultiplier: 0.5
