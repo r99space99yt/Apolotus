@@ -9,3 +9,4 @@ requirements: [
   living-matter/20
 ]
 category: defense
+researchCostMultiplier: 2
