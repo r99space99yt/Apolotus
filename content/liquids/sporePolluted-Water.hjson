@@ -5,7 +5,7 @@ research: {
   parent: apolotus-Aparas
   objectives: [
     {
-      type: OnComplete
+      type: SectorComplete
       preset: LandZone
     }
   ]
