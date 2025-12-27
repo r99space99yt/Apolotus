@@ -7,21 +7,21 @@ mesh: {
   # Mesh type. Self-explanatory.
   type: NoiseMesh
   # A number used for mesh generation.
-  seed: 69
+  seed: 54
   # Mesh "quality". More divisions = more hexagons.
-  divisions: 4
+  divisions: 8
   # First color to be used.
   color1: bb1299
   # Second color to be used.
   color2: 75238850
   # Mesh radius.
-  radius: 0.8
+  radius: 1.3
   # A noise property.
   octaves: 3
   # A noise property.
   persistence: 0.8
   # Noise scale.
-  scale: 1
+  scale: 2.4
   # A noise property.
   mag: 1.5
 }
@@ -31,16 +31,16 @@ mesh: {
 # better make sector presets and don't waste your time with this.
 generator: {
   # Mininum amount of asteroids.
-  min: 1
+  min: 4
   # Maximum amount of asteroids.
-  max: 3
+  max: 7
 
   # Noise properties.
   octaves: 2
   persistence: 0.4
-  scale: 30
+  scale: 45
   mag: 0.4
-  thresh: 1
+  thresh: 2
   foct: 3
   fmag: 0.5
   fscl: 50
@@ -64,14 +64,14 @@ generator: {
 alwaysUnlocked: true
 # This determines the size of the sector grid.
 # Fun fact: The console will warn you about this "unknown" field, but it also functions properly at the same time.
-sectorSize: 1
+sectorSize: 1.3
 # Spacing between a parent (this) and satellites.
 orbitSpacing: 1
 orbitRadius: 30
 orbitOffset: 180
 orbitTime: 25
 # Radius of this planet's sphere.
-radius: 1.03
+radius: 2.5
 # Whether to draw the orbit.
 drawOrbit: true
 # Whether this can be landed on.
