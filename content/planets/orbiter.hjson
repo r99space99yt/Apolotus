@@ -66,8 +66,8 @@ generator: {
   fper: 0.6
 
   # Asteroid radius range.
-  radMin: 3
-  radMax: 3.5
+  radMin: 4
+  radMax: 4.5
 
   # This one is ABSOLUTELY pointless, lmao.
   stoneChance: 0
@@ -79,7 +79,8 @@ generator: {
   ferricChance: 0.1
 }
 
-coreDestoryClear: true
+defaultCore = aparas
+maxZoom = 5
 # Make sure this planet is always accessible anytime.
 alwaysUnlocked: true
 # This determines the size of the sector grid.
