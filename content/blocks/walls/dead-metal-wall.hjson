@@ -5,9 +5,9 @@ size: 1
 research: apolotus-Aparas
 description: living matter wall but dead
 requirements: [
-  lead/100
-  copper/80
-  silicon/90
+  lead/20
+  copper/45
+  silicon/120
   living-matter/10
 ]
 category: defense
