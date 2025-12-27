@@ -1,0 +1,12 @@
+boilPoint: 1
+heatCapacity: 1.5
+color: 9C22C5
+research: {
+  parent: apolotus-Aparas
+  objectives: [
+    {
+      type: OnComplete
+      preset: LandZone
+    }
+  ]
+}
