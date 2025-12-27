@@ -1,0 +1,10 @@
+ localizedName: Land zone
+  description: "Its spreding"  
+  difficulty: 2     
+  alwaysUnlocked: true    
+  addStartingItems: true   
+  useAI: false     
+  showSectorLandInfo: true     
+  planet: apolotus-orbiter
+  name: LandZone
+  sector: 0       
