@@ -6,9 +6,9 @@ size: 4
 unitType: Alplatra
 unitCapModifier: 100
 requirements: [
-  silicon/1200
-  living-matter/2500
+  silicon/300
+  living-matter/650
 ] 
 category: effect
 research: apolotus-Aparas
-researchCostMultiplier: 0.5
+researchCostMultiplier: 0.2
