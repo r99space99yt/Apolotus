@@ -23,8 +23,8 @@ targetAir: true
 weapons:[
 {
 name: Big-MiniGun
-  x: 8.5
-  y: 4
+  x: 6
+  y: 5
   reload: 10
   ejectEffect: none
   shootSound: "pew"
