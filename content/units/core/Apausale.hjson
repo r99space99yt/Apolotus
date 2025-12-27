@@ -7,8 +7,8 @@ hitSize: 1
 engineOffset: 8
 engineSize: 3
 rotateSpeed: 10
-mineSpeed: 1
-buildSpeed: 2
+mineSpeed: 2
+buildSpeed: 5
 mineTier: 1
 drag: 0.06
 accel: 0.3
@@ -17,6 +17,7 @@ defaultController: minerAI
         copper
         lead
         titanium
+        living-matter
         ]
 targetGround: true
 targetAir: true
