@@ -33,7 +33,7 @@ cloudMesh: [
    speed: 0.45
    radius: 0.1
    divisions: 5
-   color: fcecfc60
+   color: fc25fc60
    octaves: 3
    persistence: 0.3
    scl: 1
@@ -79,7 +79,7 @@ generator: {
   ferricChance: 0.1
 }
 
-defaultCore: Aparas
+coreDestoryClear: true
 # Make sure this planet is always accessible anytime.
 alwaysUnlocked: true
 # This determines the size of the sector grid.
