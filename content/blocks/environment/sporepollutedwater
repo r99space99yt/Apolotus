@@ -1,0 +1,10 @@
+type: Floor
+name: spore polluted water
+speedMultiplier: 0.35
+variants: 2
+isLiquid: true
+liquidDrop: sporePolluted-Water
+cacheLayer: tar
+supportsOverlay: true
+liquidMultiplier: 1.666666666
+drownTime: 120
