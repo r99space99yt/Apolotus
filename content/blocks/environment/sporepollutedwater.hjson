@@ -1,7 +1,7 @@
 type: Floor
 name: spore polluted water
 speedMultiplier: 0.35
-variants: 3
+variants: 0
 isLiquid: true
 liquidDrop: sporePolluted-Water
 cacheLayer: tar
