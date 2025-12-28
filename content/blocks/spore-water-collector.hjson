@@ -1,24 +1,10 @@
-type: AttributeCrafter
-attribute: steam
+type: Pump
+health: 300
 size: 1
-hasLiquids: true
+category: liquid
 squareSprite: false
-outputLiquid: apolotus-sporePolluted-Water
-displayEfficiencyScale: 1
-baseEfficiency: 0
-squareSprite: false
-minEfficiency: 3
-category: production
-consumes: {
-  power: 0.25
-}
-liquidCapacity: 180
-research: apolotus-Aparas
 requirements: [
   living-matter/5
-]
-researchCost: [
-  living-matter/8
 ]
 drawer: {
   type: DrawMulti
@@ -43,6 +29,6 @@ drawer: {
     }
   ]
 }
-ambientSound: loopBio
-ambientSoundVolume: 0.07
-group: liquids
+pumpAmount: 0.08888888889
+researchCostMultiplier: 0.2
+research: apolotus-Aparas
