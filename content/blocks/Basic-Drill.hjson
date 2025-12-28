@@ -7,14 +7,6 @@ hardnessDrillMultiplier: 50
 category: production
 research: apolotus-basic-duct
 drillTime: 169
-dillItems: [
-        copper
-        coal
-        sand
-        lead
-        titanium
-        living-matter
-        ]
 drillEffect: {
   type: MultiEffect
   effects: [
