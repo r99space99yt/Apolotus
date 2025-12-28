@@ -17,6 +17,34 @@ researchCost: [
 requirements: [
   living-matter/50
 ]
+drawer: {
+  type: DrawMulti
+  drawers: [
+    {
+      type: DrawRegion
+      suffix: -base
+    }
+    {
+      type: DrawLiquidTile
+      drawLiquid: sporePolluted-Water
+      padding: 2
+    }
+    {
+      type: DrawLiquidTile
+      drawLiquid: water
+      padding: 1.5
+    }
+    {
+      type: DrawRegion
+      suffix: -rotator
+      spinSprite: true
+      rotateSpeed: 10
+    }
+    {
+      type: DrawDefault
+    }
+  ]
+}
 craftTime: 120
 craftEffect: formsmoke
 outputItems: [
