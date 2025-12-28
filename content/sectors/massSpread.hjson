@@ -1,0 +1,18 @@
+localizedName: Mass spread
+  description: "OHNo, the spore spread faster than we thought"  
+  difficulty: 4     
+  alwaysUnlocked: false    
+  addStartingItems: false   
+  showSectorLandInfo: true     
+  planet: apolotus-orbiter
+  name: massSpread
+  sector: 32      
+research: {
+  parent: 0
+  objectives: [
+    {
+      type: SectorComplete
+      preset: 0
+    }
+  ]
+}
