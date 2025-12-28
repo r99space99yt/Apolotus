@@ -1,0 +1,38 @@
+type: GenericCrafter
+name: spore polluted water and living matter separator
+size: 2
+liquidOutputDirections: [0]
+rotate: true
+quickRotate: true
+rotateDraw: false
+liquidCapacity: 80
+hasLiquids: true
+health: 550
+category: crafting
+research: apolotus-Basic-Drill
+itemCapacity: 30
+researchCost: [
+  living-matter/100
+]
+requirements: [
+  living-matter/50
+]
+craftTime: 300
+craftEffect: formsmoke
+outputItems: [
+  silicon/10
+]
+outputLiquids: [
+  water/3
+]
+consumes: {
+  items: [
+    living-matter/15
+  ]
+  liquids: [
+    sporePolluted-Water/10
+  ]
+}
+ambientSound: loopMachineSpin
+ambientSoundVolume: 0.14
+squareSprite: false
