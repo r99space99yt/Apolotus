@@ -51,7 +51,7 @@ outputItems: [
   silicon/18
 ]
 outputLiquids: [
-  water/0.08
+  water/0.85
 ]
 consumes: {
   items: [
