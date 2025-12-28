@@ -1,5 +1,5 @@
 type: AttributeCrafter
-attribute: steam
+attribute: spore
 size: 1
 health: 350
 hasLiquids: true
