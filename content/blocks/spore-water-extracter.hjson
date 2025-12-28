@@ -3,7 +3,7 @@ type: AttributeCrafter
 attribute: spores
 size: 2
 health: 350
-buildTime: 95
+buildTime: 115
 hasLiquids: true
 squareSprite: false
 outputLiquid: sporePolluted-Water/0.035
@@ -34,7 +34,7 @@ drawer: {
       type: DrawRegion
       suffix: -rotator
       spinSprite: true
-      rotateSpeed: 2
+      rotateSpeed: 5
     }
     {
       type: DrawRegion
