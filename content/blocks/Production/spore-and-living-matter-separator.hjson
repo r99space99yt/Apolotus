@@ -20,17 +20,17 @@ requirements: [
 craftTime: 300
 craftEffect: formsmoke
 outputItems: [
-  silicon/10
+  silicon/3
 ]
 outputLiquids: [
-  water/3
+  water/0.2
 ]
 consumes: {
   items: [
-    living-matter/15
+    living-matter/5
   ]
   liquids: [
-    sporePolluted-Water/10
+    sporePolluted-Water/0.3
   ]
 }
 ambientSound: loopMachineSpin
