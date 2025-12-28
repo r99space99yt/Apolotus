@@ -1,6 +1,6 @@
 name: spore polluted water extracter
 type: AttributeCrafter
-attribute: water
+attribute: spores
 size: 1
 health: 350
 hasLiquids: true
