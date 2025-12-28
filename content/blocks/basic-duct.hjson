@@ -2,8 +2,9 @@ type: Duct
 name: basic duct
 description:For transport spores or items
 size: 1
-health: 65
-speed: 3
+health: 35
+speed: 1
+builtTime: 25
 requirements: [
   living-matter/1
 ]
