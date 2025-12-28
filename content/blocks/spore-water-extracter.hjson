@@ -7,11 +7,11 @@ hasLiquids: true
 squareSprite: false
 outputLiquid: sporePolluted-Water/3
 displayEfficiencyScale: 1
-baseEfficiency: 0
+baseEfficiency: 0.5
 squareSprite: false
 minEfficiency: 9
-category: production
-liquidCapacity: 300
+category: liquids
+liquidCapacity: 100
 research: apolotus-Aparas
 requirements: [
   living-matter/5
