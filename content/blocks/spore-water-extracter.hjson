@@ -11,7 +11,7 @@ outputLiquid: sporePolluted-Water/0.035
 displayEfficiencyScale: 1
 baseEfficiency: 0.5
 squareSprite: false
-minEfficiency: 0.6
+minEfficiency: 0.45
 category: liquid
 liquidCapacity: 10
 research: apolotus-Aparas
