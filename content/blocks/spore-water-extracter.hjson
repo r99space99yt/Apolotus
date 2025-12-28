@@ -10,7 +10,7 @@ displayEfficiencyScale: 1
 baseEfficiency: 0.5
 squareSprite: false
 minEfficiency: 9
-category: liquids
+category: liquid
 liquidCapacity: 100
 research: apolotus-Aparas
 requirements: [
