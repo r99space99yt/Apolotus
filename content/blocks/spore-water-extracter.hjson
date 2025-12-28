@@ -3,7 +3,7 @@ type: AttributeCrafter
 attribute: spores
 size: 1
 health: 350
-buildTime: 1
+buildTime: 95
 hasLiquids: true
 squareSprite: false
 outputLiquid: sporePolluted-Water/0.035
