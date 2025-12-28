@@ -48,7 +48,7 @@ fogRadius: 3
 itemCapacity: 15
 researchCostMultiplier: 0.1
 consumes: {
- liquid: sporePolluted-Water/0.03
+ liquid: sporePolluted-Water/0.01
 }
 requirements: [
   living-matter/15
