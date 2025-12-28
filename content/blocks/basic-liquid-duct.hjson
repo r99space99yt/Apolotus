@@ -1,0 +1,12 @@
+type: Conduit
+category: liquid
+requirements: [
+  living-matter/2
+]
+health: 65
+underBullets: true
+solid: false
+research: apolotus-spore-water-extracter
+researchCost: [
+  living-matter/4
+]
