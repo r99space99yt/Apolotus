@@ -5,13 +5,13 @@ size: 1
 health: 350
 hasLiquids: true
 squareSprite: false
-outputLiquid: sporePolluted-Water/1.3
+outputLiquid: sporePolluted-Water/0.035
 displayEfficiencyScale: 1
 baseEfficiency: 0.5
 squareSprite: false
 minEfficiency: 0.6
 category: liquid
-liquidCapacity: 100
+liquidCapacity: 10
 research: apolotus-Aparas
 requirements: [
   living-matter/5
