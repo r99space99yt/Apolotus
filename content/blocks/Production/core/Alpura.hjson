@@ -1,4 +1,5 @@
 name: Alpura
+buildTime:500
 type: CoreBlock
 health: 4500
 itemCapacity: 8000
