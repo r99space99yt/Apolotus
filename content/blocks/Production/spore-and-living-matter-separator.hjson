@@ -22,7 +22,7 @@ drawer: {
   drawers: [
     {
       type: DrawRegion
-      suffix: -base
+      suffix: -bottom
     }
     {
       type: DrawLiquidTile
