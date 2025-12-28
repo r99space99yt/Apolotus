@@ -25,7 +25,7 @@ drawer: {
     }
     {
       type: DrawLiquidTile
-      drawLiquid: sporePolluted-water
+      drawLiquid: sporePolluted-Water
       padding: 2
     }
     {
