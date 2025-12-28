@@ -1,0 +1,44 @@
+type: AttributeCrafter
+attribute: steam
+size: 1
+health: 350
+hasLiquids: true
+squareSprite: false
+outputLiquid: sporePolluted-Water/3
+displayEfficiencyScale: 1
+baseEfficiency: 0
+squareSprite: false
+minEfficiency: 9
+category: production
+liquidCapacity: 300
+research: apolotus-Aparas
+requirements: [
+  living-matter
+]
+researchCostMultiplier: 0.1
+drawer: {
+  type: DrawMulti
+  drawers: [
+    {
+      type: DrawRegion
+      suffix: -base
+    }
+    {
+      type: DrawLiquidTile
+      drawLiquid: sporePolluted-water
+      padding: 2
+    }
+    {
+      type: DrawRegion
+      suffix: -rotator
+      spinSprite: true
+      rotateSpeed: 1.25
+    }
+    {
+      type: DrawDefault
+    }
+  ]
+}
+ambientSound: loopBio
+ambientSoundVolume: 0.02
+group: liquids
