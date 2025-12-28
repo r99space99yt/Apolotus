@@ -36,7 +36,6 @@ coolant: {
   liquid: sporePolluted-Water
   amount: 0.3
 }
-}
 shoot: {
   type: ShootSpread
   shots: 1
