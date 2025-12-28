@@ -11,7 +11,7 @@ living-matter: {
     smokeEffect: smokeCloud
     trailEffect: instTrail
     despawnEffect: flakExplosion
-    damage: 350
+    damage: 65
     buildingDamageMultiplier: 1.5
     speed: 15
     ammoMultiplier: 1
