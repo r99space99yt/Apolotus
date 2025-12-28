@@ -1,0 +1,16 @@
+type: Router
+size: 1
+health: 65
+speed: 0.5
+itemCapacity: 1
+requirements: [
+  silicon/2
+  living-matter/1
+]
+category: distribution
+squareSprite: false
+research: apolotus-basic-duct
+researchCost: [
+  silicon/5
+  living-matter/8
+]
