@@ -1,4 +1,5 @@
 type: Pump
+description: collect spore polluted water from ground layer spore polluted liquid 
 health: 300
 size: 1
 buildTime: 105
