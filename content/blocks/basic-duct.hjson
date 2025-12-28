@@ -1,0 +1,12 @@
+type: Duct
+size: 1
+health: 65
+speed: 3
+requirements: [
+  living-matter/1
+]
+research: apolotus-Aparas
+researchCost: [
+  living-matter/4
+]
+category: distribution
