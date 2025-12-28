@@ -1,0 +1,44 @@
+type: BurstDrill
+size: 2
+health: 252
+hardnessDrillMultiplier: 50
+category: production
+research: apolotus-basic-duct
+drillTime: 120
+drillEffect: {
+  type: MultiEffect
+  effects: [
+  {
+    type: particleEffect
+    particles: 16
+    length: 18
+    lifetime: 10
+    interp: circleOut
+    sizeInterp: pow5In
+    colorFrom: edc787
+    colorTo: fbf0c0
+    sizeFrom: 1
+    sizeTo: 0
+  }
+  {
+    type: WaveEffect
+    sizeFrom: 0.1
+    sizeTo: 15
+    strokeFrom: 1
+    strokeTo: 0.1
+    colorFrom: fbf0c0
+    colorTo: 8c67ad
+    lifetime: 3
+  }
+ ]
+}
+tier: 1
+shake: 0.5
+arrows: 1
+squareSprite: false
+fogRadius: 3
+itemCapacity: 15
+researchCostMultiplier: 0.1
+requirements: [
+  living-matter/15
+]
