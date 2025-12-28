@@ -1,4 +1,6 @@
 type: BurstDrill
+name:basic drill
+description: mine ores and living ore on ground layer
 size: 2
 health: 252
 hardnessDrillMultiplier: 50
@@ -51,5 +53,5 @@ consumes: {
  liquid: sporePolluted-Water/0.01
 }
 requirements: [
-  living-matter/15
+  living-matter/25
 ]
