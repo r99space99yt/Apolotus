@@ -75,6 +75,7 @@ generator: {
   ferricChance: 0.1
 }
 
+allowLaunchLoadout: true
 defaultCore: apolotus-Aparas
 maxZoom: 5
 # Make sure this planet is always accessible anytime.
