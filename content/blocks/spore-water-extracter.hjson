@@ -5,7 +5,7 @@ size: 1
 health: 350
 hasLiquids: true
 squareSprite: false
-outputLiquid: sporePolluted-Water/3
+outputLiquid: sporePolluted-Water/1.3
 displayEfficiencyScale: 1
 baseEfficiency: 0.5
 squareSprite: false
