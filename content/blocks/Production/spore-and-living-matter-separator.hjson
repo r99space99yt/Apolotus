@@ -5,7 +5,7 @@ liquidOutputDirections: [0]
 rotate: true
 quickRotate: true
 rotateDraw: false
-liquidCapacity: 80
+liquidCapacity: 55
 hasLiquids: true
 health: 550
 category: crafting
@@ -20,17 +20,17 @@ requirements: [
 craftTime: 120
 craftEffect: formsmoke
 outputItems: [
-  silicon/4
+  silicon/15
 ]
 outputLiquids: [
-  water/0.2
+  water/0.08
 ]
 consumes: {
   items: [
-    living-matter/3
+    living-matter/25
   ]
   liquids: [
-    sporePolluted-Water/0.4
+    sporePolluted-Water/0.05
   ]
 }
 ambientSound: loopMachineSpin
