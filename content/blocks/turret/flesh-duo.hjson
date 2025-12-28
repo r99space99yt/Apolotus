@@ -15,13 +15,13 @@ living-matter: {
     buildingDamageMultiplier: 1.5
     speed: 15
     ammoMultiplier: 1
-    lifetime:40
+    lifetime:20
     width: 7
     height: 12
     }
   }
 rotateSpeed: 3
-reload: 60
+reload: 45
 liquidCapacity:50
 heatColor:ffff03
 recoil: 2
