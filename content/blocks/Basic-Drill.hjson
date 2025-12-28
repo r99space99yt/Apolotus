@@ -3,7 +3,7 @@ name:basic drill
 description: mine ores and living ore on ground layer
 size: 2
 health: 252
-hardnessDrillMultiplier: 4
+hardnessDrillMultiplier: 0.75
 category: production
 research: apolotus-basic-duct
 drillTime: 175
