@@ -3,7 +3,7 @@ name:basic drill
 description: mine ores and living ore on ground layer
 size: 2
 health: 252
-hardnessDrillMultiplier: 50
+hardnessDrillMultiplier: 20
 category: production
 research: apolotus-basic-duct
 drillTime: 169
@@ -42,7 +42,7 @@ fogRadius: 3
 itemCapacity: 15
 researchCostMultiplier: 0.1
 consumes: {
- liquid: sporePolluted-Water/0.01
+ liquid: sporePolluted-Water/0.015
 }
 requirements: [
   living-matter/25
