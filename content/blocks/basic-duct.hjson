@@ -3,7 +3,7 @@ name: basic duct
 description:For transport spores or items
 size: 1
 health: 35
-speed: 0.1
+speed: 0.05
 requirements: [
   living-matter/1
 ]
