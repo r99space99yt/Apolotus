@@ -9,4 +9,4 @@ requirements: [
   living-matter/35
 ]
 category: defense
-researchCostMultiplier: 0.45
+researchCostMultiplier: 0.25
