@@ -15,13 +15,13 @@ living-matter: {
     buildingDamageMultiplier: 1.5
     speed: 15
     ammoMultiplier: 1
-    lifetime:160
+    lifetime:40
     width: 7
     height: 12
     }
   }
 rotateSpeed: 3
-reload: 120
+reload: 60
 liquidCapacity:50
 heatColor:ffff03
 recoil: 2
@@ -34,7 +34,7 @@ coolantMultiplier: 1.5
 coolant: {
   type: ConsumeLiquid
   liquid: sporePolluted-Water
-  amount: 0.3
+  amount: 0.05
 }
 shoot: {
   type: ShootSpread
