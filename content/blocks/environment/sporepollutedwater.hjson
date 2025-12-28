@@ -4,7 +4,8 @@ speedMultiplier: 0.35
 variants: 0
 isLiquid: true
 liquidDrop: sporePolluted-Water
-cacheLayer: tar
+cacheLayer: water
 supportsOverlay: true
 liquidMultiplier: 1.666666666
 drownTime: 120
+albedo: 2.35
