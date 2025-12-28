@@ -23,14 +23,14 @@ outputItems: [
   silicon/18
 ]
 outputLiquids: [
-  water/0.05
+  water/0.08
 ]
 consumes: {
   items: [
     living-matter/25
   ]
   liquids: [
-    sporePolluted-Water/0.02
+    sporePolluted-Water/0.035
   ]
 }
 ambientSound: loopMachineSpin
