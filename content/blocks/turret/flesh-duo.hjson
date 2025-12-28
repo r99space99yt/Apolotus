@@ -7,10 +7,10 @@ ammoTypes: {
 living-matter: {
     type: basicBulletType
     shootEffect: none
-    hitEffect: smallSpark
+    hitEffect: hit
     smokeEffect: smokeCloud
     trailEffect: instTrail
-    despawnEffect: smallSpark
+    despawnEffect: hit
     damage: 350
     buildingDamageMultiplier: 1.5
     speed: 15
