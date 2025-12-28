@@ -6,7 +6,7 @@ health: 252
 hardnessDrillMultiplier: 0.75
 category: production
 research: apolotus-basic-duct
-drillTime: 175
+drillTime: 235
 drillEffect: {
   type: MultiEffect
   effects: [
