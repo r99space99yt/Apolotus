@@ -27,12 +27,12 @@ drawer: {
     {
       type: DrawLiquidTile
       drawLiquid: sporePolluted-Water
-      padding: 2
+      padding: 0.5
     }
     {
       type: DrawLiquidTile
       drawLiquid: water
-      padding: 1.5
+      padding: 0.45
     }
     {
       type: DrawRegion
