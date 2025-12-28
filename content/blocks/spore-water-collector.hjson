@@ -3,7 +3,7 @@ attribute: steam
 size: 1
 hasLiquids: true
 squareSprite: false
-outputLiquid: sporePolluted-Water
+outputLiquid: apolotus-sporePolluted-Water
 displayEfficiencyScale: 1
 baseEfficiency: 0
 squareSprite: false
