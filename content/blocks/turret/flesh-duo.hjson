@@ -7,10 +7,10 @@ ammoTypes: {
 living-matter: {
     type: basicBulletType
     shootEffect: none
-    hitEffect: hit
+    hitEffect: flakExplosion
     smokeEffect: smokeCloud
     trailEffect: instTrail
-    despawnEffect: hit
+    despawnEffect: flakExplosion
     damage: 350
     buildingDamageMultiplier: 1.5
     speed: 15
@@ -30,10 +30,11 @@ ammoPerShot: 1
 shootSound: shootDuo
 category: turret
 research: apolotus-basic-duct
-coolantMultiplier: 0.013
-consumes: {
-  coolant: {
-    amount: 0.01
+coolantMultiplier: 1.5
+coolant: {
+  type: ConsumeLiquid
+  liquid: sporePolluted-Water
+  amount: 0.3
 }
 }
 shoot: {
