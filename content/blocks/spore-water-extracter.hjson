@@ -1,4 +1,5 @@
 name: spore polluted water extracter
+description: extract spore polluted water from planet's sporey flesh
 type: AttributeCrafter
 attribute: spores
 size: 2
