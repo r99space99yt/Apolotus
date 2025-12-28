@@ -1,4 +1,6 @@
 type: Duct
+name: basic duct
+description:For transport spores or items
 size: 1
 health: 65
 speed: 3
