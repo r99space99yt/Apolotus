@@ -8,11 +8,11 @@ localizedName: Mass spread
   name: massSpread
   sector: 32      
 research: {
-  parent: 0
+  parent: apolotus-Aparas
   objectives: [
     {
       type: SectorComplete
-      preset: 0
+      preset: LandZone
     }
   ]
 }
