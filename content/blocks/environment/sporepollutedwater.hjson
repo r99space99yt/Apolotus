@@ -8,4 +8,4 @@ cacheLayer: water
 supportsOverlay: true
 liquidMultiplier: 1.666666666
 drownTime: 120
-albedo: 2.35
+albedo: 3.5
