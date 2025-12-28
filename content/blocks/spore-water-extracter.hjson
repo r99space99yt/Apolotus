@@ -1,5 +1,5 @@
 type: AttributeCrafter
-attribute: spore
+attribute: water
 size: 1
 health: 350
 hasLiquids: true
