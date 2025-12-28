@@ -17,20 +17,20 @@ researchCost: [
 requirements: [
   living-matter/50
 ]
-craftTime: 300
+craftTime: 120
 craftEffect: formsmoke
 outputItems: [
-  silicon/3
+  silicon/4
 ]
 outputLiquids: [
   water/0.2
 ]
 consumes: {
   items: [
-    living-matter/5
+    living-matter/3
   ]
   liquids: [
-    sporePolluted-Water/0.3
+    sporePolluted-Water/0.4
   ]
 }
 ambientSound: loopMachineSpin
