@@ -4,7 +4,6 @@ description:For transport spores or items
 size: 1
 health: 35
 speed: 1
-builtTime: 25
 requirements: [
   living-matter/1
 ]
