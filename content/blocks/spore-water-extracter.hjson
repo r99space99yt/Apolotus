@@ -16,7 +16,7 @@ category: liquid
 liquidCapacity: 10
 research: apolotus-Aparas
 requirements: [
-  living-matter/5
+  living-matter/10
 ]
 researchCostMultiplier: 0.1
 drawer: {
