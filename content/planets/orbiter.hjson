@@ -119,7 +119,7 @@ visible: true
 iconColor: 29302b
 # Another self-explanatory field...
 hasAtmosphere: true
-atmosphereColor: 2232fc13
+atmosphereColor: 12164313
 atmosphereRadIn: 0.03
 atmosphereRadOut: 0.2
 # Icon's name displayed in top-left dialog.
