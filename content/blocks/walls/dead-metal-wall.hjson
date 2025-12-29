@@ -1,5 +1,6 @@
 type: Wall
 name: Dead Matter Wall
+description: its now dead
 health: 950
 size: 1
 research: apolotus-Alive-matter-wall
