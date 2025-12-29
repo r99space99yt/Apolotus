@@ -1,4 +1,5 @@
 name: basic router
+description: splits item
 type: Router
 size: 1
 health: 65
