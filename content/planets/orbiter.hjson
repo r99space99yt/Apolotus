@@ -102,7 +102,7 @@ orbitRadius: 25
 orbitOffset: 180
 orbitTime: 25
 # Radius of this planet's sphere.
-radius: 0.95
+radius: 1.05
 # Whether to draw the orbit.
 drawOrbit: true
 # Whether this can be landed on.
@@ -120,7 +120,7 @@ iconColor: 29302b
 # Another self-explanatory field...
 hasAtmosphere: true
 atmosphereColor: 2232fc43
-atmosphereRadIn: -0.08
+atmosphereRadIn: -0.03
 atmosphereRadOut: 0.2
 # Icon's name displayed in top-left dialog.
 icon: commandRally
