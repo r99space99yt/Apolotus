@@ -1,4 +1,5 @@
 name: DoomDayMachine
+description: crawl around with thousand legs
 type: legs
 health: 100000
 speed: 5
