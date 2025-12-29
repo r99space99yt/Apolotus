@@ -1,0 +1,50 @@
+type: multicraft.MultiCrafter
+name: test
+description: test
+size: 4
+health: 300
+hasLiquid: true
+category: production
+requirements: [
+    living-matter/120
+    silicon/50
+]
+research: {
+    parent: apolotus-Aparas
+    requirements: [
+    living-matter/500
+]
+}
+recipes: 
+[
+{
+  input: {
+  items: [
+    silicon/3
+  ]
+  liquids: water/5
+  }
+  output: {
+    items: [
+      thorium/2
+    ]
+  }
+  craftTime: 180.0
+  craftEffect: smeltsmoke
+}
+{
+  input: {
+  items: [
+    living-matter/10
+    thorium/3
+  ]
+  }
+  output: {
+    items: [
+      lead/5
+    ]
+  }
+  craftTime: 300.0
+  craftEffect: smeltsmoke
+}
+]
