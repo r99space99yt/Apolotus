@@ -1,5 +1,6 @@
 type: Floor
 name: spore polluted water
+description: source of sporey water(?)
 speedMultiplier: 0.35
 variants: 0
 isLiquid: true
