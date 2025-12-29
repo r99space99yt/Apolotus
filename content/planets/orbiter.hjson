@@ -3,7 +3,8 @@ localizedName: Apolotal
 
 # The mesh of the planet. At least MultiMesh is supported, so you can put multiple
 # NoiseMesh'es to your planet!
-mesh: {
+mesh: [
+{
   # Mesh type. Self-explanatory.
   type: NoiseMesh
   # A number used for mesh generation.
@@ -25,6 +26,19 @@ mesh: {
   # A noise property.
   mag: 1.5
 }
+ {
+    //water
+    type: NoiseMesh
+    planet: trecara
+    divisions: 5
+    seed: 7
+    radius: 0.2245
+    color1: 587d74
+    color2: 5e95cf
+    octaves: 3.7
+    persistence: 1.1
+  }
+]
 cloudMesh: [
    {
    type: HexSkyMesh
@@ -46,9 +60,9 @@ cloudMesh: [
 # better make sector presets and don't waste your time with this.
 generator: {
   # Mininum amount of asteroids.
-  min: 2
+  min: 1
   # Maximum amount of asteroids.
-  max: 4
+  max: 2
 
   # Noise properties.
   octaves: 2
@@ -107,6 +121,8 @@ iconColor: 29302b
 # Another self-explanatory field...
 hasAtmosphere: true
 atmosphereColor: 2232fc43
+atmosphereRadIn: 0
+atmosphereRadOut: 0.3
 # Icon's name displayed in top-left dialog.
 icon: commandRally
 # The parent of the planet.
