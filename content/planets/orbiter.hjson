@@ -31,7 +31,7 @@ cloudMesh: [
    planet: frostnova
    seed: 3
    speed: 0.45
-   radius: -0.1
+   radius: 0.1
    divisions: 5
    color: fc25fc60
    octaves: 3
@@ -62,8 +62,8 @@ generator: {
   fper: 0.6
 
   # Asteroid radius range.
-  radMin: 1.30
-  radMax: 1.59
+  radMin: 0.1
+  radMax: 0.3
 
   # This one is ABSOLUTELY pointless, lmao.
   stoneChance: 0
@@ -89,7 +89,7 @@ orbitRadius: 25
 orbitOffset: 180
 orbitTime: 25
 # Radius of this planet's sphere.
-radius: 1.15
+radius: 1.18
 # Whether to draw the orbit.
 drawOrbit: true
 # Whether this can be landed on.
