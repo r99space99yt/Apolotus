@@ -9,7 +9,7 @@ mesh: {
   # A number used for mesh generation.
   seed: 54
   # Mesh "quality". More divisions = more hexagons.
-  divisions: 5.3
+  divisions: 6
   # First color to be used.
   color1: bb1299
   # Second color to be used.
@@ -46,15 +46,15 @@ cloudMesh: [
 # better make sector presets and don't waste your time with this.
 generator: {
   # Mininum amount of asteroids.
-  min: 2
+  min: 8
   # Maximum amount of asteroids.
-  max: 4
+  max: 12
 
   # Noise properties.
   octaves: 2
-  persistence: 0.4
-  scale: 4.5
-  mag: 0.4
+  persistence: 0.7
+  scale: 5.3
+  mag: 0.6
   thresh: 2
   foct: 3
   fmag: 0.5
@@ -62,8 +62,8 @@ generator: {
   fper: 0.6
 
   # Asteroid radius range.
-  radMin: 4
-  radMax: 4.5
+  radMin: 8
+  radMax: 10
 
   # This one is ABSOLUTELY pointless, lmao.
   stoneChance: 0
@@ -82,14 +82,14 @@ maxZoom: 5
 alwaysUnlocked: true
 # This determines the size of the sector grid.
 # Fun fact: The console will warn you about this "unknown" field, but it also functions properly at the same time.
-sectorSize: 2.5
+sectorSize: 3.25
 # Spacing between a parent (this) and satellites.
 orbitSpacing: 1
 orbitRadius: 25
 orbitOffset: 180
 orbitTime: 25
 # Radius of this planet's sphere.
-radius: 1.5
+radius: 1.535
 # Whether to draw the orbit.
 drawOrbit: true
 # Whether this can be landed on.
@@ -105,7 +105,8 @@ visible: true
 # The color of the planet's icon displayed in top-left dialog.
 iconColor: 29302b
 # Another self-explanatory field...
-hasAtmosphere: false
+hasAtmosphere: true
+atmosphereColor: 2232fc43
 # Icon's name displayed in top-left dialog.
 icon: commandRally
 # The parent of the planet.
