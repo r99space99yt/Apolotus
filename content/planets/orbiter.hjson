@@ -22,7 +22,7 @@ mesh: [
   # A noise property.
   persistence: 0.8
   # Noise scale.
-  scale: 2.32
+  scale: 1.65
   # A noise property.
   mag: 2.3
 }
@@ -31,7 +31,7 @@ mesh: [
     type: NoiseMesh
     divisions:8
     seed: 7
-    radius: 1.3
+    radius: 0.9
     color1: 587d74
     color2: 5e95cf
     octaves: 3.7
