@@ -9,4 +9,4 @@ The Organization Have sent 7(?) ships and your mission is find them all."
 version: "2"
 subtitle: "play insane as hell!"
 minGameVersion: "154.2"
-dependencies: ["multi-crafter"]
+dependencies: ["multi-block-lib"]
