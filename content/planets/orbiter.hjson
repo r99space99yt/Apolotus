@@ -46,9 +46,9 @@ cloudMesh: [
 # better make sector presets and don't waste your time with this.
 generator: {
   # Mininum amount of asteroids.
-  min: 8
+  min: 2
   # Maximum amount of asteroids.
-  max: 12
+  max: 4
 
   # Noise properties.
   octaves: 2
