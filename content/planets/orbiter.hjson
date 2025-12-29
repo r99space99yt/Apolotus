@@ -16,9 +16,9 @@ mesh: [
   # Second color to be used.
   color2: 75238850
   # Mesh radius.
-  radius: 0.85
+  radius: 0.9
   # A noise property.
-  octaves: 3
+  octaves: 4
   # A noise property.
   persistence: 0.8
   # Noise scale.
@@ -29,10 +29,9 @@ mesh: [
  {
     //water
     type: NoiseMesh
-    planet: apolotus-orbiter
     divisions: 5
     seed: 7
-    radius: 0.35
+    radius: 0.56
     color1: 587d74
     color2: 5e95cf
     octaves: 3.7
@@ -103,7 +102,7 @@ orbitRadius: 25
 orbitOffset: 180
 orbitTime: 25
 # Radius of this planet's sphere.
-radius: 1.05
+radius: 0.95
 # Whether to draw the orbit.
 drawOrbit: true
 # Whether this can be landed on.
@@ -121,8 +120,8 @@ iconColor: 29302b
 # Another self-explanatory field...
 hasAtmosphere: true
 atmosphereColor: 2232fc43
-atmosphereRadIn: -0.05
-atmosphereRadOut: 0.3
+atmosphereRadIn: -0.08
+atmosphereRadOut: 0.2
 # Icon's name displayed in top-left dialog.
 icon: commandRally
 # The parent of the planet.
