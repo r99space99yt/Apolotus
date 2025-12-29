@@ -3,6 +3,8 @@ name: test
 description: test
 size: 4
 health: 300
+itemCapacity: 50
+liquidCapacity: 100
 hasLiquid: true
 category: production
 requirements: [
