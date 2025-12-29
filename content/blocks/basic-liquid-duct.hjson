@@ -1,4 +1,5 @@
 name:liquid duct
+description:transport liquids 
 type: Conduit
 category: liquid
 requirements: [
