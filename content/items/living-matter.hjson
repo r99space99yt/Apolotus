@@ -1,4 +1,6 @@
+name: living matter
+description: its alive..
 cost: 2
-flammability: -100
+flammability: 10
 explosiveness: -200
 charge: 0.5
