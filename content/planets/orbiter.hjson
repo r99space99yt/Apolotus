@@ -62,8 +62,8 @@ generator: {
   fper: 0.6
 
   # Asteroid radius range.
-  radMin: 0.3
-  radMax: 0.5
+  radMin: 1.30
+  radMax: 1.59
 
   # This one is ABSOLUTELY pointless, lmao.
   stoneChance: 0
@@ -89,7 +89,7 @@ orbitRadius: 25
 orbitOffset: 180
 orbitTime: 25
 # Radius of this planet's sphere.
-radius: 1.05
+radius: 1.15
 # Whether to draw the orbit.
 drawOrbit: true
 # Whether this can be landed on.
