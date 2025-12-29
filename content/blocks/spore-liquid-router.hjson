@@ -1,4 +1,5 @@
 name:spore liquid router
+description: splits liquid
 type: LiquidRouter
 size: 1
 solid: false
