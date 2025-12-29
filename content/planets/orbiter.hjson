@@ -121,7 +121,7 @@ iconColor: 29302b
 # Another self-explanatory field...
 hasAtmosphere: true
 atmosphereColor: 2232fc43
-atmosphereRadIn: 0
+atmosphereRadIn: -0.2
 atmosphereRadOut: 0.3
 # Icon's name displayed in top-left dialog.
 icon: commandRally
