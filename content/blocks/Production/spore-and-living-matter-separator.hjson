@@ -1,5 +1,6 @@
 type: GenericCrafter
-name: spore polluted water and living matter separator
+name: spore and matter separator
+description: uses spore polluted water and living matter and put them in a container to crush it and separate silicon out resulting in water and silicon output
 size: 2
 liquidOutputDirections: [0]
 rotate: true
