@@ -1,5 +1,6 @@
 name: Alpura
-buildTime:500
+description: Second core, this is where ur adventure actually begins..
+buildTime:1000
 type: CoreBlock
 health: 4500
 itemCapacity: 8000
