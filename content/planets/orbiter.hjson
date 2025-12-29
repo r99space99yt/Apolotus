@@ -20,20 +20,20 @@ mesh: [
   # A noise property.
   octaves: 6
   # A noise property.
-  persistence: 0.8
+  persistence: 0.85
   # Noise scale.
   scale: 1.65
   # A noise property.
-  mag: 2.3
+  mag: 2.33
 }
  {
     //water
     type: NoiseMesh
-    divisions:8
+    divisions: 6
     seed: 7
-    radius: 0.85
-    color1: 587d74
-    color2: 5e95cf
+    radius: 0.875
+    color1: 627d74
+    color2: 7e95cf
     octaves: 3.7
     persistence: 1.1
   }
