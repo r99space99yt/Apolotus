@@ -15,7 +15,7 @@ mesh: {
   # Second color to be used.
   color2: 75238850
   # Mesh radius.
-  radius: 0.7
+  radius: 0.85
   # A noise property.
   octaves: 3
   # A noise property.
@@ -31,7 +31,7 @@ cloudMesh: [
    planet: frostnova
    seed: 3
    speed: 0.45
-   radius: 0.1
+   radius: -0.1
    divisions: 5
    color: fc25fc60
    octaves: 3
@@ -62,8 +62,8 @@ generator: {
   fper: 0.6
 
   # Asteroid radius range.
-  radMin: 8
-  radMax: 10
+  radMin: 0.3
+  radMax: 0.5
 
   # This one is ABSOLUTELY pointless, lmao.
   stoneChance: 0
@@ -89,7 +89,7 @@ orbitRadius: 25
 orbitOffset: 180
 orbitTime: 25
 # Radius of this planet's sphere.
-radius: 1.535
+radius: 1.05
 # Whether to draw the orbit.
 drawOrbit: true
 # Whether this can be landed on.
