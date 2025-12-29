@@ -15,13 +15,13 @@ mesh: {
   # Second color to be used.
   color2: 75238850
   # Mesh radius.
-  radius: 1.3
+  radius: 0.7
   # A noise property.
   octaves: 3
   # A noise property.
   persistence: 0.8
   # Noise scale.
-  scale: 3.5
+  scale: 2.35
   # A noise property.
   mag: 1.5
 }
