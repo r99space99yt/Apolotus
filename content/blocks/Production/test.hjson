@@ -24,7 +24,6 @@ recipes:
   items: [
     silicon/3
   ]
-  liquids: water/5
   }
   output: {
     items: [
@@ -37,7 +36,7 @@ recipes:
 {
   input: {
   items: [
-    living-matter/10
+    apolotus-living-matter/10
     thorium/3
   ]
   }
