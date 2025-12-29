@@ -41,7 +41,6 @@ mesh: [
 cloudMesh: [
    {
    type: HexSkyMesh
-   planet: frostnova
    seed: 3
    speed: 0.45
    radius: 0.1
