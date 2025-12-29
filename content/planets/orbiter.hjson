@@ -16,7 +16,7 @@ mesh: [
   # Second color to be used.
   color2: 75238850
   # Mesh radius.
-  radius: 0.6
+  radius: 0.76
   # A noise property.
   octaves: 6
   # A noise property.
