@@ -20,8 +20,8 @@ weapons: [
   shootY: 8
   reload: 160
   recoil: 0
-  chargeSound: lasercharge2
-  shootSound: beam
+  chargeSound: chargeVela
+  shootSound: shootBeamPlasma
   continuous: true
   cooldownTime: 200
   bullet: {
