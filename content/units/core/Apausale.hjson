@@ -29,7 +29,7 @@ name: Basic-MiniGun
   y: 5
   reload: 10
   ejectEffect: none
-  shootSound: laser
+  shootSound: shootLaser
   rotate: true
   mirror: true
   bullet: {
