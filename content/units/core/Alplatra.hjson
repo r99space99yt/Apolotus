@@ -29,7 +29,7 @@ name: Big-MiniGun
   y: 5
   reload: 10
   ejectEffect: none
-  shootSound: "pew"
+  shootSound: shootDuo
   rotate: true
   mirror: true
   bullet: {
@@ -58,7 +58,7 @@ name: Basic-MiniGun
   y: 4.5
   reload: 7
   ejectEffect: none
-  shootSound: "laser"
+  shootSound: shootLaser
   rotate: true
   mirror: true
   bullet: {
