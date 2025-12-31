@@ -1,5 +1,5 @@
 name:basic duct bridge
-description: powerful bridge that send items in s second.
+description: powerful bridge that send items in second.
 type: DuctBridge
 size: 1
 health: 65
