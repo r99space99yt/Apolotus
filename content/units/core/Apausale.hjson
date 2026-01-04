@@ -36,7 +36,7 @@ name: Basic-MiniGun
     type: SapBulletType
     sapStrength: 1
     length: 110
-    damage: 30
+    damage: 10
     shootEffect: shootSmall
     hitColor: D6FF33
     color: FFE70F

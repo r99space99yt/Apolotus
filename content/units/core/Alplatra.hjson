@@ -43,9 +43,9 @@ name: Big-MiniGun
         width: 10
         height: 10
         speed: 3
-        lifetime: 200
+        lifetime: 75
         scaleLife: true
-        damage: 50
+        damage: 20
         spin: 10
         pierce: true
         pierceBuilding: false
@@ -65,7 +65,7 @@ name: Basic-MiniGun
     type: SapBulletType
     sapStrength: 3
     length: 110
-    damage: 30
+    damage: 10
     shootEffect: shootSmall
     hitColor: D6FF33
     color: FFE70F
