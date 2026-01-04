@@ -18,7 +18,7 @@ name: bigCannon
   y: -4
   reload: 60
   ejectEffect: sparkShoot
-  shootSound: shootTitan
+  shootSound: cannonShoot
   rotate: true
   mirror: false
   bullet: {
@@ -29,7 +29,7 @@ name: bigCannon
         hitShake: 3
         hitEffect: [
   flakExplosion
-  shockwaveSmaller
+  shockwave
         ]
         backColor: 997700
         width: 13

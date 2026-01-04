@@ -29,7 +29,7 @@ name: Big-MiniGun
         frontColor: ffbb00
         hitSound: explosion
         hitShake: 1
-        hitEffect: instBomb
+        hitEffect: hitFuse
         backColor: 997700
         width: 10
         height: 10
