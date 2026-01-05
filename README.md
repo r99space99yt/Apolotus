@@ -11,4 +11,4 @@ by Tweu (Tinnphat Dc) And Collaborator: Lucas Limit (microprocessordustry Dc)
 
 
 <!----------------------------------[ Links ]--------------------------------->
-[Logo]: icon.png
+[Logo]: sprites-override/ui/logo.png
