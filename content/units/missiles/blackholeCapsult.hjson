@@ -27,7 +27,7 @@ name: null
   mirror: false
   ejectEffect: instBomb
   shoot:{
-    type: SapBulletType
+    type: shootPattern
   }
   bullet: standardHoming
   bullet: {
