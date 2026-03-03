@@ -20,6 +20,7 @@ range:0
 weapons: [
 {
 name:null
+firstShootDelay:125
 reload: 1
     shootOnDeath: true
     mirror: false
