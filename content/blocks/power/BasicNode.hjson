@@ -1,0 +1,17 @@
+type: BeamNode
+description: electricity goes brrrr
+health: 65
+fogRadius: 2
+range: 8
+size: 1
+squareSprite: false
+researchCost: [
+  silicon/150
+]
+category: power
+research: Aparas
+requirements: [
+  silicon/5
+]
+laserColor1: CEADEEFF
+laserColor2: 6A4291FF
