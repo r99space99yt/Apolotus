@@ -22,7 +22,7 @@ shootSound:laser
 mirror:false
 recoil:9
 rotate:true
-reload:1300
+reload:600
 
   bullet: {
     shootEffect: instShoot
