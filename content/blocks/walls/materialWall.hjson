@@ -1,0 +1,12 @@
+type: Wall
+name: ???
+description: you can mine these for material
+variants: 4
+forceDark:true
+health: 600
+size: 1
+requirements: [
+  silicon/1558
+  living-matter/2645
+]
+category: defense
