@@ -16,6 +16,7 @@ trailColor: ff2222ff
 aimDst: 0
 drawCell: false
 hidden: true
+range:0
 weapons: [
 {
 name:null
