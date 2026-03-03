@@ -16,3 +16,8 @@ research: {
     }
   ]
 }
+rules: {
+  defaultTeam: {
+    coreBlock: Aparas
+  }
+}
