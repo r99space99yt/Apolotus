@@ -11,4 +11,4 @@ by Tweu (tinnphat_ DC) and collaborator: LucasLimit (microprocessordustry DC)
 
 
 <!----------------------------------[ Links ]--------------------------------->
-[Logo]: apolotus.zip/sprites-override/ui/logo.png
+[Logo]: sprites-override/ui/logo.png
