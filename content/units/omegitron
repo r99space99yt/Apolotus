@@ -1,0 +1,51 @@
+type: naval
+name:omegitron
+description:First blackhole tect
+speed: 0.3
+health: 5950
+armor: 150
+drag: 0.1
+accel: 0.1
+hitSize: 35
+rotateSpeed: 0.8
+trailLength: 15
+outlineColor: 00000000
+moveSoundVolume: 0.65
+moveSound: shipMove
+weapons:[
+{
+name:BlackHole-cannon
+y:-1
+x:0
+type: basisBulletType
+shootSound:laser
+mirror:false
+recoil:9
+rotate:true
+reload:1300
+
+  bullet: {
+    shootEffect: instShoot
+    smokeEffect: shootBigSmoke
+    instantDisappear: true
+    damage: 100
+    spawnUnit: apolotus-blackholeCapsult
+}}
+]
+immunities: [
+  wet
+]
+parts: [
+{
+   "type": "BlackHolePart",
+   "x": 0,
+   "y": 1,
+   "moveX": 0,
+   "moveY": -3,
+   "size": 1, 
+   "sizeTo": 12,
+   "edge": 4,
+   "edgeTo": 32,
+   "progress": "warmup",
+   "growProgrss": "warmup"
+}
