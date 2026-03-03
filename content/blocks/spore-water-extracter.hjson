@@ -18,7 +18,7 @@ research: apolotus-Aparas
 requirements: [
   living-matter/10
 ]
-researchCostMultiplier: 0.1
+alwaysUnlocked: true
 drawer: {
   type: DrawMulti
   drawers: [
