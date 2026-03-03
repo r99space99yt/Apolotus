@@ -1,0 +1,39 @@
+type: UnitFactory
+name:NavelFactory
+description: the beginning of navel unit
+size: 2
+health: 450
+placeableLiquid:true
+configurable: false
+requirements: [
+  silicon/5
+  living-matter/65
+]
+category: units
+plans: [
+  {
+    type: FactoryUnitPlan
+    unit: navore
+    requirements: [
+      living-matter/75
+      silicon/35
+    ]
+    time: 1500
+  }
+]
+consumes: {
+  power: 2
+  liquid: sporePolluted-Water/0.035
+}
+researchCost: [
+  silicon/350
+]
+research: {
+  parent: FloodedWasteland
+  objectives: [
+    {
+      type: OnSector
+      preset: FloodedWasteland
+    }
+  ]
+}
