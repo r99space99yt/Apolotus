@@ -18,24 +18,21 @@ range: 25
 hidden: true
 weapons: [
 {
-name: null
-  shootOnDeath: true
-  x: 0
-  y: -6
-  reload: 0
-  rotate: true
-  mirror: false
-  ejectEffect: instBomb
-  shoot:{
-    type: shootPattern
-  }
-  bullet: standardHoming
-  bullet: {
-    shootEffect: instBomb
-    smokeEffect: shootBigSmoke
-    instantDisappear: false
-    damage: 500
-    spawnUnit: miniBlackhole
-  }
-}]
+      "shootOnDeath": true
+      "reload": 9999,
+      "shootCone": 360,
+      "bullet": {
+        "type": "BasicBulletType",
+        "speed": 0,
+        "damage": 400,
+        "lifetime": 0,
+        "width": 0,
+        "height": 0,
+
+        "despawnEffect": "explosion",
+        "hitEffect": "explosion",
+
+        "spawnUnit": "apolotus-miniBlackhole"
+      }
+]
 outlineColor: 00000000
