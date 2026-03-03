@@ -47,6 +47,6 @@ parts: [
    "edge": 6.5,
    "edgeTo": 10,
    "progress": "warmup",
-   "growProgrss": "warmup"
+   "growProgress": "warmup"
 }
 ]
