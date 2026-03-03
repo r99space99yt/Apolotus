@@ -1,0 +1,67 @@
+type: GenericCrafter
+name: spore and matter separator
+description: uses spore polluted water and living matter and put them in a container to crush it and separate silicon out resulting in water and silicon output
+size: 2
+liquidOutputDirections: [0]
+rotate: true
+quickRotate: true
+rotateDraw: false
+liquidCapacity: 55
+hasLiquids: true
+health: 550
+category: crafting
+research: apolotus-Basic-Drill
+itemCapacity: 30
+researchCost: [
+  living-matter/100
+]
+requirements: [
+  living-matter/50
+]
+drawer: {
+  type: DrawMulti
+  drawers: [
+    {
+      type: DrawRegion
+      suffix: -bottom
+    }
+    {
+      type: DrawLiquidTile
+      drawLiquid: sporePolluted-Water
+      padding: 0.5
+    }
+    {
+      type: DrawLiquidTile
+      drawLiquid: water
+      padding: 0.45
+    }
+    {
+      type: DrawRegion
+      suffix: -rotator
+      spinSprite: true
+      rotateSpeed: 10
+    }
+    {
+      type: DrawDefault
+    }
+  ]
+}
+craftTime: 120
+craftEffect: formsmoke
+outputItems: [
+  silicon/18
+]
+outputLiquids: [
+  water/0.85
+]
+consumes: {
+  items: [
+    living-matter/25
+  ]
+  liquids: [
+    sporePolluted-Water/0.035
+  ]
+}
+ambientSound: loopMachineSpin
+ambientSoundVolume: 0.14
+squareSprite: false
