@@ -12,7 +12,4 @@ requirements: [
 category: distribution
 squareSprite: false
 research: apolotus-basic-duct
-researchCost: [
-  silicon/5
-  living-matter/8
-]
+alwaysUnlocked: true
