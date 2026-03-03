@@ -12,9 +12,9 @@ lifetime: 300
 rotateSpeed:0
 trailLength: 200
 trailColor: ffff22ff
-aimDst: 10
+aimDst: 35
 drawCell: false
-range: 25
+range: 45
 hidden: true
 weapons: [
 {
