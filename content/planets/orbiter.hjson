@@ -88,7 +88,7 @@ generator: {
 }
 
 allowLaunchLoadout: true
-defaultCore: apolotus-Aparas
+defaultCore:"Aparas"
 maxZoom: 5
 # Make sure this planet is always accessible anytime.
 alwaysUnlocked: true
