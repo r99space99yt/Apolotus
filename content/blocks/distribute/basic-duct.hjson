@@ -8,7 +8,5 @@ requirements: [
   living-matter/1
 ]
 research: apolotus-Aparas
-researchCost: [
-  living-matter/4
-]
+alwaysUnlocked: true
 category: distribution
