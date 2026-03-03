@@ -40,7 +40,7 @@ arrows: 1
 squareSprite: false
 fogRadius: 3
 itemCapacity: 15
-researchCostMultiplier: 0.1
+alwaysUnlocked: true
 consumes: {
  liquid: sporePolluted-Water/0.015
 }
