@@ -7,3 +7,8 @@
   planet: apolotus-orbiter
   name: LandZone
   sector: 0       
+  rules: {
+  defaultTeam: {
+    coreBlock: Aparas
+  }
+}
