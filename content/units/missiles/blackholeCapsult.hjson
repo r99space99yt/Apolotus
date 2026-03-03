@@ -10,30 +10,27 @@ flying: true
 useUnitCap: false
 lifetime: 300
 rotateSpeed:0
-respawnHit: true
 trailLength: 200
 trailColor: ffff22ff
 aimDst: 4
 drawCell: false
-range: 2
+range: 25
 hidden: true
 weapons: [
 {
 name: null
   shootOnDeath: true
-  shootOnRespawn: true
-  killShooter: true
   x: 0
   y: -6
-  reload: 150
+  reload: 0
   rotate: true
-  rotateSpeed: 99999
+  rotationSpeed:999
   mirror: false
+  range: 5
   ejectEffect: instBomb
   shoot:{
     type: zapBulletType
   }
-
   bullet: standardHoming
   bullet: {
     shootEffect: instBomb
