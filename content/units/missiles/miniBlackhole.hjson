@@ -21,8 +21,7 @@ weapons: [
 name:null
 reload: 1
     shootOnDeath: true
-    mirror: true
-    range:0
+    mirror: false
     shootCone: 360
     shootSound: "portalclose"
     bullet: {
@@ -46,8 +45,6 @@ abilities: [
         {
         type: mindustry.entities.abilities.EnergyFieldAbility
         range: 150
-        amount: 5
-        heal: 100
         reload: 0.2
         damage: 30
         color: ff0000
