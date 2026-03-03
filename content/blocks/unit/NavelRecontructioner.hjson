@@ -1,0 +1,30 @@
+type: Reconstructor
+name:Navel Recontructioner
+description: upgrade is always good
+placeableLiquid:true
+requirements: [ 
+  silicon/155
+  living-matter/250
+] 
+category: units 
+size: 3
+consumes: { 
+    power: 6.5 
+    items: [ 
+        silicon/210
+        living-matter/145
+    ] 
+    liquid: water/1 
+} 
+constructTime: 3250
+liquidCapacity: 55 
+upgrades: [ 
+    [navore, harvire] 
+] 
+researchCost: [
+  silicon/650
+]
+research: { 
+    parent: NavelFactory
+    objectives: [NavelFactory, spore-and-living-matter-separator, navore] 
+}
