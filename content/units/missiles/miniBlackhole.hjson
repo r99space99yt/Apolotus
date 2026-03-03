@@ -13,7 +13,7 @@ rotateSpeed:0
 trailLength: 200
 circleTarget: true
 trailColor: ff2222ff
-aimDst: 4
+aimDst: 0
 drawCell: false
 hidden: true
 weapons: [
@@ -28,8 +28,8 @@ reload: 1
       type: ExplosionBulletType
       despawnShake: 10
       hitShake: 10
-      splashDamage: 2000
-      splashDamageRadius: 50
+      splashDamage: 20000
+      splashDamageRadius: 70
     }
   }]
 parts: [
