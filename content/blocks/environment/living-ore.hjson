@@ -1,7 +1,0 @@
-type: OverlayFloor
-
-name: Living matter Ore
-description: Source of living matter.
-
-itemDrop: living-matter
-wallOre: false
