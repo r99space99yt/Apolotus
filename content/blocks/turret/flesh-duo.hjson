@@ -1,0 +1,48 @@
+name: flesh duo
+description: Duo? Made out of flesh and spores...
+type: ItemTurret
+health: 125
+size: 1
+ammoTypes: {
+living-matter: {
+    type: basicBulletType
+    shootEffect: none
+    hitEffect: flakExplosion
+    smokeEffect: smokeCloud
+    trailEffect: instTrail
+    despawnEffect: flakExplosion
+    damage: 65
+    buildingDamageMultiplier: 1.5
+    speed: 15
+    ammoMultiplier: 1
+    lifetime:7.5
+    width: 7
+    height: 12
+    }
+  }
+rotateSpeed: 3
+reload: 25
+liquidCapacity:50
+heatColor:ffff03
+recoil: 2
+shootCone: 0.03
+ammoPerShot: 1
+shootSound: shootDuo
+category: turret
+research: apolotus-basic-duct
+coolantMultiplier: 1.5
+coolant: {
+  type: ConsumeLiquid
+  liquid: sporePolluted-Water
+  amount: 0.05
+}
+shoot: {
+  type: ShootSpread
+  shots: 1
+  spread: 0.85
+}
+requirements: [
+living-matter/30
+]
+researchCostMultiplier: 0.1
+outlineColor: 00000000
