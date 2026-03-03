@@ -7,6 +7,7 @@ size: 3
 unitType: Apausale
 squareSprite: false
 unitCapModifier: 25
+alwaysUnlocked: true
 requirements: [
   living-matter/400
 ] 
