@@ -12,7 +12,6 @@ requirements: [
   living-matter/400
 ] 
 category: effect
-researchCostMultiplier: 0
 research: {
   planet: apolotus-orbiter
   root: true
