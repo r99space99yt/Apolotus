@@ -24,19 +24,18 @@ name: null
   y: -6
   reload: 0
   rotate: true
-  rotationSpeed:999
   mirror: false
   ejectEffect: instBomb
   shoot:{
-    type: zapBulletType
+    type: ShootPattern
   }
   bullet: standardHoming
   bullet: {
     shootEffect: instBomb
     smokeEffect: shootBigSmoke
-    instantDisappear: true
-    damage: 150
-    spawnUnit: apolotus-miniBlackhole
+    instantDisappear: false
+    damage: 500
+    spawnUnit: miniBlackhole
   }
 }]
 outlineColor: 00000000
