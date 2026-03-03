@@ -34,5 +34,6 @@ weapons: [
 
         "spawnUnit": "apolotus-miniBlackhole"
       }
+}
 ]
 outlineColor: 00000000
