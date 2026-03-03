@@ -1,0 +1,56 @@
+type: missile
+health: 50000000
+hitSize: 30
+template: MissileUnitType
+speed: 0.0
+physics: true
+engineSize:0
+engineOffset:0
+flying: true
+useUnitCap: false
+lifetime: 2000
+rotateSpeed:0
+trailLength: 200
+circleTarget: true
+trailColor: ff2222ff
+aimDst: 4
+drawCell: false
+hidden: true
+weapons: [
+{
+name:null
+reload: 1
+    shootOnDeath: true
+    mirror: true
+    range:0
+    shootCone: 360
+    shootSound: "portalclose"
+    bullet: {
+      type: ExplosionBulletType
+      despawnShake: 10
+      hitShake: 10
+      splashDamage: 2000
+      splashDamageRadius: 50
+    }
+  }]
+parts: [
+{
+   "type": "BlackHolePart",
+   "x": 0,
+   "y": 0,
+   "size": 30,
+   "edge": 45,
+}
+]
+abilities: [
+        {
+        type: mindustry.entities.abilities.EnergyFieldAbility
+        range: 150
+        amount: 5
+        heal: 100
+        reload: 0.2
+        damage: 30
+        color: ff0000
+        }
+]
+outlineColor: 00000009
