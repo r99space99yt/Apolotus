@@ -12,7 +12,7 @@ lifetime: 300
 rotateSpeed:0
 trailLength: 200
 trailColor: ffff22ff
-aimDst: 4
+aimDst: 10
 drawCell: false
 range: 25
 hidden: true
@@ -26,7 +26,6 @@ name: null
   rotate: true
   rotationSpeed:999
   mirror: false
-  range: 5
   ejectEffect: instBomb
   shoot:{
     type: zapBulletType
