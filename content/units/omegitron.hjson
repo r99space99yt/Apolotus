@@ -39,9 +39,9 @@ parts: [
 {
    "type": "BlackHolePart",
    "x": 0,
-   "y": -2,
+   "y": -13,
    "moveX": 0,
-   "moveY": -2,
+   "moveY": -15,
    "size": 3, 
    "sizeTo": 6,
    "edge": 6.5,
