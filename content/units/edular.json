@@ -8,6 +8,23 @@
   "legLength": 0.1,
   "legCount":4,
   "outlineColor": 00000000,
+  "flying": true,
+  "lowAltitude": true,
+
+"engines": [
+  {
+    x: 4
+    y: -5
+    radius: 1.8
+    color: "ff9c5a"
+  },
+  {
+    x: -4
+    y: -5
+    radius: 1.8
+    color: "ff9c5a"
+  }
+]
 
   "weapons": [
     {
