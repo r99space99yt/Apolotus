@@ -7,11 +7,12 @@
   "hitSize": 8,
   "legLength": 0.1,
   "legCount":4,
+  "outlineColor": 00000000,
 
   "weapons": [
     {
       "name": "small-turret",
-      "x": 0,
+      "x": 2,
       "y": 5,
       "layerOffset": -0.1,
       "reload": 20,
