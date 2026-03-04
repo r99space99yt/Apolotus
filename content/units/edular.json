@@ -1,7 +1,8 @@
 {
   "type": "UnitType",
   "name": "edular",
-  "constructor": "UnitEntity::create",
+
+  "constructor": "mindustry.gen.UnitEntity::create",
 
   "health": 500,
   "speed": 1.8,
