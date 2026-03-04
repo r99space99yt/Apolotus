@@ -2,7 +2,7 @@
   "type": "legs",
   "name": "edular",
   "hovering": true,
-  "health": 500,
+  "health": 100,
   "speed": 1.8,
   "hitSize": 8,
   "legLength": 0.1,
@@ -10,8 +10,10 @@
 
   "weapons": [
     {
+      "name": "small-turret",
       "x": 0,
-      "y": 0,
+      "y": 5,
+      "layerOffset": -0.1,
       "reload": 20,
       "bullet": {
         "type": "BasicBulletType",
