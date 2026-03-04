@@ -1,5 +1,5 @@
 type: missile
-health: 1000
+health: 100000
 hitSize: 5
 template: MissileUnitType
 speed: 7
@@ -12,9 +12,9 @@ lifetime: 100
 rotateSpeed:0
 trailLength: 200
 trailColor: ffff22ff
-aimDst: 100
+aimDst: 165
 drawCell: false
-range: 100
+range: 165
 hidden: true
 weapons: [
 {
@@ -23,7 +23,7 @@ weapons: [
       "shootCone": 360,
       "bullet": {
         "type": "BasicBulletType",
-        "speed": 2,
+        "speed": 4,
         "damage": 4000000,
         "lifetime": 600,
         "width": 0,
