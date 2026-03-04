@@ -3,18 +3,18 @@ health: 1000
 hitSize: 5
 template: MissileUnitType
 speed: 7
-engineSize: 1
+engineSize: 3
 engineOffset: 4
 physics: true
 flying: true
 useUnitCap: false
-lifetime: 300
+lifetime: 100
 rotateSpeed:0
 trailLength: 200
 trailColor: ffff22ff
-aimDst: 60
+aimDst: 100
 drawCell: false
-range: 60
+range: 100
 hidden: true
 weapons: [
 {
@@ -24,8 +24,8 @@ weapons: [
       "bullet": {
         "type": "BasicBulletType",
         "speed": 2,
-        "damage": 400,
-        "lifetime": 60,
+        "damage": 4000000,
+        "lifetime": 600,
         "width": 0,
         "height": 0,
 
