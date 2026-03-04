@@ -20,9 +20,10 @@ range:0
 weapons: [
 {
 name:null
-firstShootDelay:125
-reload: 1
+reload: 9999
     shootOnDeath: true
+    shootOnRespawn: true
+    aimDst:0
     mirror: false
     shootCone: 360
     shootSound: "portalclose"
@@ -31,16 +32,17 @@ reload: 1
       despawnShake: 10
       hitShake: 10
       splashDamage: 20000
-      splashDamageRadius: 70
+      splashDamageRadius: 85
     }
-  }]
+  }
+]
 parts: [
 {
    "type": "BlackHolePart",
    "x": 0,
    "y": 0,
    "size": 30,
-   "edge": 45,
+   "edge": 55,
 }
 ]
 abilities: [
@@ -48,7 +50,7 @@ abilities: [
         type: mindustry.entities.abilities.EnergyFieldAbility
         range: 150
         reload: 0.2
-        damage: 30
+        damage: 300
         color: ff0000
         }
 ]
