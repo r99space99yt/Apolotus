@@ -1,7 +1,6 @@
 {
   "type": "UnitType",
   "name": "edular",
-
   "constructor": "UnitEntity::create",
 
   "health": 500,
@@ -14,7 +13,6 @@
 
   "weapons": [
     {
-      "name": "small-turret",
       "x": 0,
       "y": 0,
       "reload": 20,
