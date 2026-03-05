@@ -2,6 +2,7 @@ type: Reconstructor
 name:Navel Recontructioner
 description: upgrade is always good
 placeableLiquid:true
+health:750
 requirements: [ 
   silicon/155
   living-matter/250
