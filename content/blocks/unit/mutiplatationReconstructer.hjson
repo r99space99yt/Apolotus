@@ -1,0 +1,31 @@
+type: Reconstructor
+health: 1250
+name: multiplatation Recontructioner
+description: upgrades is great
+placeableLiquid:true
+requirements: [ 
+  silicon/365
+  living-matter/655
+] 
+category: units 
+size: 4
+consumes: { 
+    power: 14.5
+    items: [ 
+        silicon/450
+        living-matter/545
+    ] 
+    liquid: water/3
+} 
+constructTime: 5530
+liquidCapacity: 105
+upgrades: [ 
+    [navore, harvire] 
+] 
+researchCost: [
+  silicon/2850
+  living-matter/3500
+]
+research: { 
+    parent: NavelRecontructioner
+}
