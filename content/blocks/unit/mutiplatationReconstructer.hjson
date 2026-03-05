@@ -20,7 +20,7 @@ consumes: {
 constructTime: 5530
 liquidCapacity: 105
 upgrades: [ 
-    [navore, harvire] 
+    [harvire, prevorm] 
 ] 
 researchCost: [
   silicon/2850
