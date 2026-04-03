@@ -9,30 +9,24 @@ Events.on(WorldLoadEvent, cons(() => {
 
     print("BLACKHOLE TYPE FOUND: " + blackholeType);
 
-    // Run for every blackhole unit spawned
-    Events.on(UnitCreateEvent, cons(e => {
-        if(e.unit.type != blackholeType) return;
+    function attachBlackhole(unit){
+        if(unit.blackholeAttached) return;
+        unit.blackholeAttached = true;
 
-        let unit = e.unit;
-
-        // Save original update
         let oldUpdate = unit.update;
-
-        // Override update safely on this instance
         unit.update = function(){
-            oldUpdate.call(this); // call original
+            oldUpdate.call(this);
 
             let radius = 200;
             let strength = 5;
 
-            // Pull units safely
             Groups.unit.intersect(
                 this.x - radius,
                 this.y - radius,
                 radius*2,
                 radius*2,
                 cons(u => {
-                    if(!u || u.dead || u.isPlayer() || u === this) return; // skip self
+                    if(!u || u.dead || u.isPlayer() || u === this) return;
 
                     let dx = this.x - u.x;
                     let dy = this.y - u.y;
@@ -46,7 +40,6 @@ Events.on(WorldLoadEvent, cons(() => {
                 })
             );
 
-            // Pull bullets safely
             Groups.bullet.intersect(
                 this.x - radius,
                 this.y - radius,
@@ -71,5 +64,17 @@ Events.on(WorldLoadEvent, cons(() => {
                 })
             );
         };
+    }
+
+    // Attach to all existing blackholes
+    Groups.unit.each(cons(u => {
+        if(u.type === blackholeType) attachBlackhole(u);
     }));
+
+    // Attach to blackholes created later
+    Events.on(UnitCreateEvent, cons(e => {
+        if(e.unit.type === blackholeType) attachBlackhole(e.unit);
+    }));
+
+    print("BLACKHOLE SCRIPT READY");
 }));
