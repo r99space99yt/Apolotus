@@ -1,3 +1,12 @@
-print("LOADER SCRIPT STARTED");
-require('suit')
-require('blackholePull')
+print("LOADER STARTED");
+try {
+    require('suit');
+} catch(e){
+    print("Suit script failed:", e);
+}
+
+try {
+    require('blackholePull');
+} catch(e){
+    print("Blackhole script failed:", e);
+}
