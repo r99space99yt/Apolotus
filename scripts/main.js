@@ -5,6 +5,7 @@ const blackhole = Vars.content.getByName(
 );
 
 if(blackhole != null){
+        print("BLACKHOLE ACTIVE");
 
     // override unit instance (IMPORTANT for build 156)
     blackhole.constructor = () => {
@@ -15,7 +16,7 @@ if(blackhole != null){
 
             let radius = 340;     // size of blackhole
             let strength = 4.8;   // base gravity strength
-
+            print("BLACKHOLE RUNNING, BRO, IF U SEE THIS, MIND ME, CONSOLEEEE");
             // ======================
             // 🟣 BULLET GRAVITY
             // ======================
