@@ -3,9 +3,9 @@ const blackhole = Vars.content.getByName(
     "apolotus-miniBlackhole"
 );
 
-print("SCRIPT LOADED:", blackhole);
+print("SCRIPT LOADED: " + blackhole);
 
-Events.run(EventType.UnitCreateEvent, cons(e => {
+Events.on(UnitCreateEvent, cons(e => {
 
     if(e.unit.type == blackhole){
 
