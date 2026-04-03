@@ -1,0 +1,12 @@
+type: Wall
+name: Shield suit block
+description: carries for anti garvity interceptions!
+health: 950
+size: 1
+research: apolotus-Alive-matter-wall
+requirements: [
+  silicon/268
+  living-matter/86
+]
+category: defense
+researchCostMultiplier: 0.25
