@@ -1,28 +1,24 @@
-print("SCRIPT STARTED");
-
-function setupBlackhole(){
+Events.on(WorldLoadEvent, cons(() => {
     const blackholeType = Vars.content.getByName(ContentType.unit, "apolotus-miniBlackhole");
     if(!blackholeType){
-        // not ready yet, check again next tick
-        Time.runTask(1, setupBlackhole);
+        print("❌ BLACKHOLE NOT FOUND");
         return;
     }
 
     print("BLACKHOLE TYPE FOUND: " + blackholeType);
 
-    // Function to attach pull behavior to a blackhole unit instance
-    function attachPull(unit){
-        if(unit.blackholeAttached) return; // only attach once
+    function attach(unit){
+        if(unit.blackholeAttached) return;
         unit.blackholeAttached = true;
 
         const oldUpdate = unit.update;
         unit.update = function(){
             oldUpdate.call(this);
 
-            let radius = 300;   // pull radius
-            let strength = 150;  // pull strength, increase if bullets are too fast
+            let radius = 300;
+            let unitStrength = 50;    // for units
+            let bulletStrength = 600; // for bullets
 
-            // Pull units
             Groups.unit.intersect(
                 this.x - radius,
                 this.y - radius,
@@ -35,11 +31,10 @@ function setupBlackhole(){
                     let dist = Math.sqrt(dx*dx + dy*dy);
                     if(dist < 1) return;
                     dx /= dist; dy /= dist;
-                    u.vel.add(dx * strength * (1 - dist/radius), dy * strength * (1 - dist/radius));
+                    u.vel.add(dx*unitStrength*(1-dist/radius), dy*unitStrength*(1-dist/radius));
                 })
             );
 
-            // Pull bullets
             Groups.bullet.intersect(
                 this.x - radius,
                 this.y - radius,
@@ -52,31 +47,16 @@ function setupBlackhole(){
                     let dist = Math.sqrt(dx*dx + dy*dy);
                     if(dist < 1) return;
                     dx /= dist; dy /= dist;
-                    let force = strength * (1 - dist/radius);
-                    b.x += dx * force;
-                    b.y += dy * force;
-                    if(dist < 20) b.remove(); // destroy if too close
+                    b.x += dx * bulletStrength * (1 - dist/radius);
+                    b.y += dy * bulletStrength * (1 - dist/radius);
+                    if(dist < 20) b.remove();
                 })
             );
         };
     }
 
-    // Attach to all existing blackholes
-    Groups.unit.each(cons(u => {
-        if(u.type === blackholeType) attachPull(u);
-    }));
-
-    // Attach to newly spawned blackholes
-    Events.on(UnitCreateEvent, cons(e => {
-        if(e.unit.type === blackholeType) attachPull(e.unit);
-    }));
+    Groups.unit.each(cons(u => { if(u.type === blackholeType) attach(u); }));
+    Events.on(UnitCreateEvent, cons(e => { if(e.unit.type === blackholeType) attach(e.unit); }));
 
     print("BLACKHOLE SCRIPT READY");
-}
-
-// Run immediately if world already loaded, else wait for load
-if(Vars.world != null){
-    setupBlackhole();
-} else {
-    Events.on(WorldLoadEvent, cons(() => setupBlackhole()));
-}
+}));
