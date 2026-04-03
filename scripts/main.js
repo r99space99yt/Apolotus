@@ -28,8 +28,8 @@ function setupBlackholePullLoop(){
 
                     // Ignore players carrying shield/suit
                     if(v.isPlayer()){
-                        if(v.payload?.item?.name === "apolotus-ShieldBlock") return;
-                        if(v.carry?.item?.name === "apolotus-ShieldBlock") return;
+                        if(v.payload.item.name === "apolotus-ShieldBlock") return;
+                        if(v.carry.item.name === "apolotus-ShieldBlock") return;
                         if(v.suitBlock) return;
                         if(v.hasSuit) return;
                         if(v._shield) return;
