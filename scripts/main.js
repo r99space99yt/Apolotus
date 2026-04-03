@@ -1,67 +1,72 @@
 print("SCRIPT STARTED");
 
 Events.on(WorldLoadEvent, cons(() => {
-    print("WORLD LOADED");
+    print("WORLD LOADED, waiting 5 seconds...");
 
-    const blackhole = Vars.content.getByName(ContentType.unit, "apolotus-miniBlackhole");
+    // Delay 5 seconds (300 ticks at 60 FPS)
+    Time.run(300, () => {
+        print("5 seconds passed — setting up blackhole");
 
-    if(!blackhole){
-        print("❌ BLACKHOLE NOT FOUND — something’s still wrong");
-        return;
-    }
+        const blackhole = Vars.content.getByName(ContentType.unit, "apolotus-miniBlackhole");
 
-    print("BLACKHOLE FOUND: " + blackhole);
+        if(!blackhole){
+            print("❌ BLACKHOLE NOT FOUND — check internal name!");
+            return;
+        }
 
-    // override update for all instances
-    blackhole.update = function(unit){
-        this.super$update();
+        print("BLACKHOLE FOUND: " + blackhole);
 
-        let radius = 400;
-        let strength = 15;
+        blackhole.update = function(unit){
+            this.super$update();
 
-        // pull units
-        Groups.unit.intersect(
-            unit.x - radius,
-            unit.y - radius,
-            radius*2,
-            radius*2,
-            cons(u => {
-                if(u == unit) return;
-                let dx = unit.x - u.x;
-                let dy = unit.y - u.y;
-                let dist = Math.sqrt(dx*dx + dy*dy);
-                if(dist < 1) return;
+            let radius = 200;    // safer radius
+            let strength = 5;    // safer strength
 
-                dx /= dist;
-                dy /= dist;
+            // pull units safely
+            Groups.unit.intersect(
+                unit.x - radius,
+                unit.y - radius,
+                radius * 2,
+                radius * 2,
+                cons(u => {
+                    if(u == unit || u.dead) return;
 
-                u.vel.add(dx*strength*(1-dist/radius), dy*strength*(1-dist/radius));
-            })
-        );
+                    let dx = unit.x - u.x;
+                    let dy = unit.y - u.y;
+                    let dist = Math.sqrt(dx*dx + dy*dy);
+                    if(dist < 1) return;
 
-        // pull bullets
-        Groups.bullet.intersect(
-            unit.x - radius,
-            unit.y - radius,
-            radius*2,
-            radius*2,
-            cons(b => {
-                let dx = unit.x - b.x;
-                let dy = unit.y - b.y;
-                let dist = Math.sqrt(dx*dx + dy*dy);
-                if(dist < 1) return;
+                    dx /= dist;
+                    dy /= dist;
 
-                dx /= dist;
-                dy /= dist;
+                    u.vel.add(dx*strength*(1-dist/radius), dy*strength*(1-dist/radius));
+                })
+            );
 
-                let force = strength*(1-dist/radius);
-                b.x += dx*force;
-                b.y += dy*force;
+            // pull bullets
+            Groups.bullet.intersect(
+                unit.x - radius,
+                unit.y - radius,
+                radius*2,
+                radius*2,
+                cons(b => {
+                    let dx = unit.x - b.x;
+                    let dy = unit.y - b.y;
+                    let dist = Math.sqrt(dx*dx + dy*dy);
+                    if(dist < 1) return;
 
-                if(dist < 20) b.remove();
-            })
-        );
-    };
+                    dx /= dist;
+                    dy /= dist;
 
-    print("BLACKHOLE SCRIPT READY");
+                    let force = strength*(1-dist/radius);
+                    b.x += dx*force;
+                    b.y += dy*force;
+
+                    if(dist < 20) b.remove();
+                })
+            );
+        };
+
+        print("BLACKHOLE SCRIPT READY AFTER DELAY");
+    });
 }));
