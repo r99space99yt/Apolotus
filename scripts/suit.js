@@ -1,70 +1,72 @@
-print("SUIT SCRIPT LOADED");
+print("SUIT SCRIPT LOADING");
 
-function initSuitScript(){
-    print("SUIT SCRIPT STARTED");
+(function(){
 
-    var shieldName = "apolotus-ShieldBlock";
-    var maxHealth = 950;
-    var ticksToDestroy = 25 * 60; // 25 sec at 60 ticks/sec
-    var damagePerTick = maxHealth / ticksToDestroy;
+    const shieldName = "apolotus-ShieldBlock";
+    const maxHP = 950;
+    const ticksToBreak = 25 * 60; // 25 seconds at 60 ticks/sec
+    const damagePerTick = maxHP / ticksToBreak;
+    const blackholeRadius = 300;
 
-    // Suit damage loop
+    // Store shield HP per player safely
+    const shieldHP = new Map();
+
+    // Main loop
     Time.runTask(0, function suitLoop(){
-        Groups.unit.each(cons(function(u){
-            if(!u.carry || !u.carry.item) return;
-            if(u.carry.item.name !== shieldName) return;
 
-            var block = u.carry.item;
-            if(block.health == null) block.health = maxHealth;
+        Groups.player.each(cons(p => {
+            if(!p) return;
 
-            var nearBlackhole = false;
+            // Get shield block carried
+            let blockItem = null;
+            try {
+                if(p.payload && p.payload.item && p.payload.item.name === shieldName) blockItem = p.payload.item;
+                else if(p.carry && p.carry.item && p.carry.item.name === shieldName) blockItem = p.carry.item;
+            } catch(e){}
 
-            Groups.unit.intersect(
-                u.x - 300, u.y - 300,
-                600, 600,
-                cons(function(bh){
-                    if(bh.type && bh.type.name === "apolotus-miniBlackhole") nearBlackhole = true;
-                })
-            );
+            if(!blockItem) {
+                shieldHP.delete(p); // reset if no shield
+                return;
+            }
 
+            // Initialize HP if missing
+            if(!shieldHP.has(p)) shieldHP.set(p, maxHP);
+
+            // Check for nearby blackholes
+            let nearBlackhole = false;
+            try {
+                Groups.unit.intersect(
+                    p.x - blackholeRadius, p.y - blackholeRadius,
+                    blackholeRadius*2, blackholeRadius*2,
+                    cons(u => {
+                        if(u.type && u.type.name === "apolotus-miniBlackhole") nearBlackhole = true;
+                    })
+                );
+            } catch(e){}
+
+            // Damage shield if near blackhole
             if(nearBlackhole){
-                block.health -= damagePerTick;
-                if(block.health <= 0){
-                    block.health = 0;
-                    u.carry = null; // destroy suit
+                let hp = shieldHP.get(p) - damagePerTick;
+                if(hp <= 0){
+                    hp = 0;
+                    p.carry = null;
+                    p.payload = null;
+                    shieldHP.delete(p);
+                } else {
+                    shieldHP.set(p, hp);
                 }
             }
 
-            // Store health on player for render
-            u._shieldHP = block.health;
+            // Simple HP UI below player
+            try {
+                const hp = Math.floor(shieldHP.get(p) || 0);
+                p.name = "Shield HP: " + hp;
+            } catch(e){}
         }));
 
         Time.runTask(0, suitLoop);
     });
 
-    // Draw HP bars under players
-    Events.on(RenderEvent, cons(function(e){
-        Groups.player.each(cons(function(p){
-            if(p._shieldHP && p._shieldHP > 0){
-                var width = 40;
-                var height = 5;
-                var x = p.x - width/2;
-                var y = p.y - 40; // offset above feet
+    print("SUIT SCRIPT READY");
 
-                var ratio = p._shieldHP / maxHealth;
-
-                Draw.color(Color.gray);
-                Fill.rect(x, y, width, height); // background
-
-                Draw.color(Color.cyan);
-                Fill.rect(x, y, width * ratio, height); // current HP
-
-                Draw.color(); // reset color
-            }
-        }));
-    }));
-
-    print("SUIT SCRIPT READY WITH UI");
-}
-
-initSuitScript();
+})();
