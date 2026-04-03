@@ -3,25 +3,26 @@ print("SUIT SCRIPT LOADED");
 function initSuitScript(){
     print("SUIT SCRIPT STARTED");
 
-    const shieldName = "apolotus-ShieldBlock";
-    const maxHealth = 950;
-    const ticksToDestroy = 25 * 60; // 25 seconds at 60 ticks/sec
-    const damagePerTick = maxHealth / ticksToDestroy;
+    var shieldName = "apolotus-ShieldBlock";
+    var maxHealth = 950;
+    var ticksToDestroy = 25 * 60; // 25 sec at 60 ticks/sec
+    var damagePerTick = maxHealth / ticksToDestroy;
 
     // Suit damage loop
     Time.runTask(0, function suitLoop(){
-        Groups.unit.each(cons(u => {
-            if(!u.carry?.item || u.carry.item.name !== shieldName) return;
+        Groups.unit.each(cons(function(u){
+            if(!u.carry || !u.carry.item) return;
+            if(u.carry.item.name !== shieldName) return;
 
-            let block = u.carry.item;
-            block.health = block.health || maxHealth;
+            var block = u.carry.item;
+            if(block.health == null) block.health = maxHealth;
 
-            let nearBlackhole = false;
+            var nearBlackhole = false;
 
             Groups.unit.intersect(
                 u.x - 300, u.y - 300,
                 600, 600,
-                cons(bh => {
+                cons(function(bh){
                     if(bh.type && bh.type.name === "apolotus-miniBlackhole") nearBlackhole = true;
                 })
             );
@@ -42,15 +43,15 @@ function initSuitScript(){
     });
 
     // Draw HP bars under players
-    Events.on(RenderEvent, cons(e => {
-        Groups.player.each(cons(p => {
+    Events.on(RenderEvent, cons(function(e){
+        Groups.player.each(cons(function(p){
             if(p._shieldHP && p._shieldHP > 0){
-                const width = 40;
-                const height = 5;
-                const x = p.x - width/2;
-                const y = p.y - 40; // offset above feet
+                var width = 40;
+                var height = 5;
+                var x = p.x - width/2;
+                var y = p.y - 40; // offset above feet
 
-                const ratio = p._shieldHP / maxHealth;
+                var ratio = p._shieldHP / maxHealth;
 
                 Draw.color(Color.gray);
                 Fill.rect(x, y, width, height); // background
