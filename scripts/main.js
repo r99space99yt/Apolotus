@@ -13,9 +13,9 @@ function setupBlackholePullLoop(){
         Groups.unit.each(cons(u => {
             if(u.type !== blackholeType) return;
 
-            let radius = 300;
-            let unitStrength = 5;
-            let bulletStrength = 6; // smaller to prevent spaghettification
+            let radius = 100;
+            let unitStrength = 1.7;
+            let bulletStrength = 3; // smaller to prevent spaghettification
             let maxSpeed = 300;
 
             // --- Pull units (including players now) ---
