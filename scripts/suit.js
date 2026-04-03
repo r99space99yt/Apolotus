@@ -1,18 +1,18 @@
-print("SHIELDBLOCK HP UI SCRIPT STARTED");
+print("SUIT SCRIPT STARTED");
 
 const shieldBlock = Vars.content.getByName(ContentType.block, "apolotus-ShieldBlock");
 if(!shieldBlock){
-    print("❌ ShieldBlock not found");
+    print("❌ ShieldBlock not found!");
 }
 
-// Track suit HP per block
+// Map to track suit HP
 let suitHPMap = {};
 
-// Blackhole damage loop
+// Function: Blackhole damages ShieldBlock
 function blackholeDamageLoop(){
     const blackholeType = Vars.content.getByName(ContentType.unit, "apolotus-miniBlackhole");
     if(!blackholeType){
-        Time.runTask(1, blackholeDamageLoop);
+        Time.runTask(1, blackholeDamageLoop); // try again next tick
         return;
     }
 
@@ -21,7 +21,7 @@ function blackholeDamageLoop(){
             if(u.type !== blackholeType) return;
 
             let radius = 300;
-            let damagePerTick = 0.633; // 25 sec to destroy 950 hp
+            let damagePerTick = 0.633; // ~25 sec to destroy 950 hp
 
             Groups.build.each(cons(b => {
                 if(!b || !b.block) return;
@@ -48,37 +48,45 @@ function blackholeDamageLoop(){
 
         Time.runTask(0, loop);
     });
+
+    print("BLACKHOLE DAMAGE LOOP READY");
 }
 
-// Player UI
-Events.on(ClientLoadEvent, cons(() => {
-    Core.app.post(() => {
-        Events.on(RenderEvent, cons(() => {
-            Groups.player.each(cons(p => {
-                if(!p.stack) return;
-                let stack = p.stack;
+// Function: Draw HP bar above player if carrying ShieldBlock
+function suitHPUI(){
+    Events.on(RenderEvent, cons(() => {
+        Groups.player.each(cons(p => {
+            if(!p.stack) return;
+            let stack = p.stack;
 
-                if(stack.hasItem(shieldBlock)){
-                    let b = stack.find(b => b.item == shieldBlock);
-                    let hp = suitHPMap[b.id] || shieldBlock.health;
-                    let pct = Math.max(0, hp / shieldBlock.health);
+            // If carrying ShieldBlock
+            if(stack.hasItem(shieldBlock)){
+                let b = stack.find(b => b.item == shieldBlock);
+                let hp = suitHPMap[b.id] || shieldBlock.health;
+                let pct = Math.max(0, hp / shieldBlock.health);
 
-                    let x = p.x / Vars.tilesize;
-                    let y = p.y / Vars.tilesize + 16;
+                let x = p.x / Vars.tilesize - 8;
+                let y = p.y / Vars.tilesize + 16;
 
-                    Draw.color(Color.cyan);
-                    Fill.rect(x - 8, y, 16 * pct, 2);
-                    Draw.reset();
-                }
-            }));
+                Draw.color(Color.cyan);
+                Fill.rect(x, y, 16 * pct, 2);
+                Draw.reset();
+            }
         }));
-    });
-}));
-
-if(Vars.world != null){
-    blackholeDamageLoop();
-} else {
-    Events.on(WorldLoadEvent, cons(() => blackholeDamageLoop()));
+    }));
 }
 
-print("SHIELDBLOCK HP UI SCRIPT READY");
+// Run functions after world loads
+function initSuitScript(){
+    blackholeDamageLoop();
+    suitHPUI();
+}
+
+// Wait for world ready
+if(Vars.world != null){
+    initSuitScript();
+}else{
+    Events.on(WorldLoadEvent, cons(() => initSuitScript()));
+}
+
+print("SUIT SCRIPT READY");
