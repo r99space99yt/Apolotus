@@ -1,3 +1,4 @@
+require('suit.js');
 print("BLACKHOLE PULL SCRIPT STARTED");
 
 function setupBlackholePullLoop(){
