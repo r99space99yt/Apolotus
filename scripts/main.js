@@ -1,21 +1,23 @@
 print("SCRIPT STARTED");
 
-function setupBlackholes(){
+function setupBlackhole(){
     const blackholeType = Vars.content.getByName(ContentType.unit, "apolotus-miniBlackhole");
     if(!blackholeType){
-        print("❌ BLACKHOLE NOT FOUND — maybe the mod didn’t load yet");
+        // not ready yet, check again next tick
+        Time.runTask(1, setupBlackhole);
         return;
     }
 
     print("BLACKHOLE TYPE FOUND: " + blackholeType);
 
-    // Only attach logic if you want units/bullets pulled, else skip
+    // now you can safely attach logic or just detect
 }
 
+// run immediately if world is loaded, else wait
 if(Vars.world != null){
-    setupBlackholes(); // world already loaded, run immediately
+    setupBlackhole();
 } else {
-    Events.on(WorldLoadEvent, cons(() => setupBlackholes())); // wait for load
+    Events.on(WorldLoadEvent, cons(() => setupBlackhole()));
 }
 
 print("SCRIPT READY");
