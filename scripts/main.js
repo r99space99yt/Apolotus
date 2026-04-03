@@ -1,5 +1,6 @@
 require('suit.js');
 print("BLACKHOLE PULL SCRIPT STARTED");
+
 function setupBlackholePullLoop(){
     const blackholeType = Vars.content.getByName(ContentType.unit, "apolotus-miniBlackhole");
     if(!blackholeType){
@@ -18,15 +19,21 @@ function setupBlackholePullLoop(){
             let bulletStrength = 6;
             let maxSpeed = 300;
 
-            // Pull units (skip players carrying suit)
+            // --- Pull units (skip players carrying suit) ---
             Groups.unit.intersect(
                 u.x - radius, u.y - radius,
                 radius*2, radius*2,
                 cons(v => {
                     if(!v || v.dead || v === u) return;
 
-                    // Check if carrying shield block
-                    if(v.carry && v.carry.item && v.carry.item.name === "apolotus-ShieldBlock") return;
+                    // Ignore players carrying shield/suit
+                    if(v.isPlayer()){
+                        if(v.payload?.item?.name === "apolotus-ShieldBlock") return;
+                        if(v.carry?.item?.name === "apolotus-ShieldBlock") return;
+                        if(v.suitBlock) return;
+                        if(v.hasSuit) return;
+                        if(v._shield) return;
+                    }
 
                     let dx = u.x - v.x;
                     let dy = u.y - v.y;
@@ -44,7 +51,7 @@ function setupBlackholePullLoop(){
                 })
             );
 
-            // Pull bullets (normal)
+            // --- Pull bullets ---
             Groups.bullet.intersect(
                 u.x - radius, u.y - radius,
                 radius*2, radius*2,
@@ -55,13 +62,16 @@ function setupBlackholePullLoop(){
                     let dist = Math.sqrt(dx*dx + dy*dy);
                     if(dist < 1) return;
                     dx /= dist; dy /= dist;
+
                     let pull = Math.min(bulletStrength * (1 - dist/radius), 15);
                     let vx = b.vel.x + dx * pull;
                     let vy = b.vel.y + dy * pull;
                     let speed = Math.sqrt(vx*vx + vy*vy);
                     let bulletMax = maxSpeed * 2;
                     if(speed > bulletMax){ vx = vx / speed * bulletMax; vy = vy / speed * bulletMax; }
+
                     b.vel.set(vx, vy);
+
                     if(dist < 20) b.remove();
                 })
             );
