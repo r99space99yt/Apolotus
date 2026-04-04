@@ -10,22 +10,22 @@ function setupBlackholePullLoop(){
     print("BLACKHOLE TYPE FOUND: " + blackholeType);
 
     Time.runTask(0, function pullLoop(){
-        Groups.unit.each(cons(u => {
+        Groups.unit.each(cons(function(u){
             if(!u.type || u.type.name !== "apolotus-miniBlackhole") return;
 
-            const radius = 300;
-            const unitStrength = 5;
-            const bulletStrength = 6;
-            const maxSpeed = 300;
+            var radius = 300;
+            var unitStrength = 5;
+            var bulletStrength = 6;
+            var maxSpeed = 300;
 
-            // --- Pull units (skip players carrying shield/suit) ---
+            // --- Pull nearby units (with shield skip) ---
             Groups.unit.intersect(
                 u.x - radius, u.y - radius,
-                radius*2, radius*2,
-                cons(v => {
+                radius * 2, radius * 2,
+                cons(function(v){
                     if(!v || v.dead || v === u) return;
 
-                    // Skip players carrying shield/suit safely
+                    // Safe shield skip
                     if(v.isPlayer()){
                         if(v.payload && v.payload.item && v.payload.item.name === "apolotus-ShieldBlock") return;
                         if(v.carry && v.carry.item && v.carry.item.name === "apolotus-ShieldBlock") return;
@@ -34,20 +34,20 @@ function setupBlackholePullLoop(){
                         if(v._shield) return;
                     }
 
-                    // Pull calculation
-                    const dx = u.x - v.x;
-                    const dy = u.y - v.y;
-                    const dist = Math.sqrt(dx*dx + dy*dy);
+                    // Pull math
+                    var dx = u.x - v.x;
+                    var dy = u.y - v.y;
+                    var dist = Math.sqrt(dx*dx + dy*dy);
                     if(dist < 1) return;
 
-                    const nx = dx / dist;
-                    const ny = dy / dist;
-                    const pull = unitStrength * (1 - dist / radius);
+                    var nx = dx / dist;
+                    var ny = dy / dist;
+                    var pull = unitStrength * (1 - dist / radius);
 
-                    let vx = v.vel.x + nx * pull;
-                    let vy = v.vel.y + ny * pull;
+                    var vx = v.vel.x + nx * pull;
+                    var vy = v.vel.y + ny * pull;
 
-                    const speed = Math.sqrt(vx*vx + vy*vy);
+                    var speed = Math.sqrt(vx*vx + vy*vy);
                     if(speed > maxSpeed){
                         vx = vx / speed * maxSpeed;
                         vy = vy / speed * maxSpeed;
@@ -60,24 +60,24 @@ function setupBlackholePullLoop(){
             // --- Pull bullets ---
             Groups.bullet.intersect(
                 u.x - radius, u.y - radius,
-                radius*2, radius*2,
-                cons(b => {
+                radius * 2, radius * 2,
+                cons(function(b){
                     if(!b) return;
 
-                    const dx = u.x - b.x;
-                    const dy = u.y - b.y;
-                    const dist = Math.sqrt(dx*dx + dy*dy);
+                    var dx = u.x - b.x;
+                    var dy = u.y - b.y;
+                    var dist = Math.sqrt(dx*dx + dy*dy);
                     if(dist < 1) return;
 
-                    const nx = dx / dist;
-                    const ny = dy / dist;
-                    const pull = Math.min(bulletStrength * (1 - dist / radius), 15);
+                    var nx = dx / dist;
+                    var ny = dy / dist;
+                    var pull = Math.min(bulletStrength * (1 - dist / radius), 15);
 
-                    let vx = b.vel.x + nx * pull;
-                    let vy = b.vel.y + ny * pull;
+                    var vx = b.vel.x + nx * pull;
+                    var vy = b.vel.y + ny * pull;
 
-                    const speed = Math.sqrt(vx*vx + vy*vy);
-                    const bulletMax = maxSpeed * 2;
+                    var speed = Math.sqrt(vx*vx + vy*vy);
+                    var bulletMax = maxSpeed * 2;
                     if(speed > bulletMax){
                         vx = vx / speed * bulletMax;
                         vy = vy / speed * bulletMax;
@@ -93,30 +93,34 @@ function setupBlackholePullLoop(){
             Groups.unit.intersect(
                 u.x - 400, u.y - 400,
                 800, 800,
-                cons(v => {
-                    if(!v || v.dead || v === u || !v.type) return;
-                    if(v.type.name === "apolotus-miniBlackhole"){
-                        Fx.lightning.at(u.x, u.y, v.x, v.y);
+                cons(function(v2){
+                    if(!v2 || v2.dead || v2 === u || !v2.type) return;
+                    if(v2.type.name === "apolotus-miniBlackhole"){
+                        Fx.lightning.at(u.x, u.y, v2.x, v2.y);
                     }
                 })
             );
 
-            // --- Corrupt nearby floor (20 tiles radius safely) ---
-            const tileRadius = 20;
-            const tileSize = Vars.tilesize;
+            // --- Corrupt floor around blackhole ---
+            var tileRadius = 20;
+            var tileSize = Vars.tilesize;
 
-            for(let tx = -tileRadius; tx <= tileRadius; tx++){
-                for(let ty = -tileRadius; ty <= tileRadius; ty++){
-                    const wx = u.x + tx * tileSize;
-                    const wy = u.y + ty * tileSize;
-                    const dist = Math.sqrt((wx - u.x)**2 + (wy - u.y)**2);
-                    if(dist <= tileRadius * tileSize){
-                        const tile = Vars.world.tileWorld(wx, wy);
-                        if(tile != null && tile.floor() != null && Math.random() < 0.005){
-                            try{
-                                tile.setFloor(Blocks.empty);
-                            } catch(e){
-                                print("Failed to set floor at " + wx + ", " + wy + ": " + e);
+            for(var tx = -tileRadius; tx <= tileRadius; tx++){
+                for(var ty = -tileRadius; ty <= tileRadius; ty++){
+                    var wx = u.x + tx * tileSize;
+                    var wy = u.y + ty * tileSize;
+                    var ddx = wx - u.x;
+                    var ddy = wy - u.y;
+                    var distt = Math.sqrt(ddx*ddx + ddy*ddy);
+                    if(distt <= tileRadius * tileSize){
+                        var tile = Vars.world.tileWorld(wx, wy);
+                        if(tile != null && tile.floor() != null){
+                            if(Math.random() < 0.005){
+                                try {
+                                    tile.setFloor(Blocks.empty);
+                                } catch(e){
+                                    print("Floor corrupt fail: " + e);
+                                }
                             }
                         }
                     }
@@ -125,7 +129,6 @@ function setupBlackholePullLoop(){
 
         }));
 
-        // Schedule next tick
         Time.runTask(0, pullLoop);
     });
 
@@ -135,5 +138,7 @@ function setupBlackholePullLoop(){
 if(Vars.world != null){
     setupBlackholePullLoop();
 } else {
-    Events.on(WorldLoadEvent, cons(() => setupBlackholePullLoop()));
+    Events.on(WorldLoadEvent, cons(function() {
+        setupBlackholePullLoop();
+    }));
 }
