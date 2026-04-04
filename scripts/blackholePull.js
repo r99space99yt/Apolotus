@@ -9,6 +9,12 @@ function setupBlackholePullLoop(){
 
     print("BLACKHOLE TYPE FOUND: " + blackholeType);
 
+    // Fetch the glitch floor once
+    const glitchFloor = Vars.content.getByName(ContentType.floor, "apolotus-GlitchFloor");
+    if(!glitchFloor){
+        print("GlitchFloor not found!");
+    }
+
     Time.runTask(0, function pullLoop(){
         Groups.unit.each(cons(function(u){
             if(!u.type || u.type.name !== "apolotus-miniBlackhole") return;
@@ -114,10 +120,10 @@ function setupBlackholePullLoop(){
                     var distt = Math.sqrt(ddx*ddx + ddy*ddy);
                     if(distt <= tileRadius * tileSize){
                         var tile = Vars.world.tileWorld(wx, wy);
-                        if(tile != null && tile.floor() != null){
+                        if(tile != null && tile.floor() != null && glitchFloor != null){
                             if(Math.random() < 0.005){
                                 try {
-                                    tile.setFloor('apolotus-GlitchFloor');
+                                    tile.setFloor(glitchFloor);
                                 } catch(e){
                                     print("Floor corrupt fail: " + e);
                                 }
