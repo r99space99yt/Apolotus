@@ -1,49 +1,41 @@
 print("SUIT SCRIPT LOADED");
 
-function initSuitScript() {
+function initSuitScript(){
     print("SUIT SCRIPT STARTED");
 
-    const shieldName = "apolotus-ShieldBlock";
-    const maxHP = 950;
-    const ticksToDestroy = 25 * 60; // 25 seconds at 60 ticks/sec
-    const damagePerTick = maxHP / ticksToDestroy;
-    const blackholeRadius = 300;
+    var shieldName = "apolotus-ShieldBlock";
+    var maxHP = 950;
+    var ticksToDestroy = 25*60; // 25s at 60 ticks
+    var damagePerTick = maxHP / ticksToDestroy;
+    var blackholeRadius = 300;
 
-    // Main suit loop
-    Time.runTask(0, function suitLoop() {
-        Groups.unit.each(cons(function(u) {
-            // Only check units carrying the shield safely
+    Time.runTask(0, function suitLoop(){
+        Groups.unit.each(cons(function(u){
             if(!u.carry || !u.carry.item) return;
             if(u.carry.item.name !== shieldName) return;
 
-            // Initialize HP if missing
             if(u.shieldHP === undefined) u.shieldHP = maxHP;
 
             var nearBlackhole = false;
 
-            // Detect blackholes near the unit
             Groups.unit.intersect(
                 u.x - blackholeRadius, u.y - blackholeRadius,
-                blackholeRadius * 2, blackholeRadius * 2,
-                cons(function(bh) {
+                blackholeRadius*2, blackholeRadius*2,
+                cons(function(bh){
                     if(bh && bh.type && bh.type.name === "apolotus-miniBlackhole") nearBlackhole = true;
                 })
             );
 
-            // Apply damage over time
             if(nearBlackhole){
                 u.shieldHP -= damagePerTick;
                 if(u.shieldHP <= 0){
                     u.shieldHP = 0;
-                    u.carry = null; // destroy the shield
+                    u.carry = null;
                 }
             }
 
-            // Draw HP below unit
-            Draw.z(1000);
-            Draw.color(Color.red);
-            var hitSize = u.hitSize ? u.hitSize : 20;
-            Draw.text(Math.floor(u.shieldHP) + " HP", u.x, u.y - hitSize - 10);
+            // Can't draw here directly, need Render event
+            // Just store HP on unit for now
         }));
 
         Time.runTask(0, suitLoop);
@@ -52,9 +44,9 @@ function initSuitScript() {
     print("SUIT SCRIPT READY");
 }
 
-// Safe initialization
-try {
+// Safe init
+try{
     initSuitScript();
-} catch(e){
-    print("Error initializing suit script: " + e);
+}catch(e){
+    print("Suit script error: "+e);
 }
