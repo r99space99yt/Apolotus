@@ -1,3 +1,3 @@
 print("LOADER STARTED");
 require('suit');
-require('blackholePull');
+require('blackholePull')
