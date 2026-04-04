@@ -117,7 +117,7 @@ function setupBlackholePullLoop(){
                         if(tile != null && tile.floor() != null){
                             if(Math.random() < 0.005){
                                 try {
-                                    tile.setFloor(GlitchFloor);
+                                    tile.setFloor('apolotus-GlitchFloor');
                                 } catch(e){
                                     print("Floor corrupt fail: " + e);
                                 }
