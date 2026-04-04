@@ -1,4 +1,4 @@
 print("LOADER STARTED");
 require('suit');
-require('glitchFloor')
+require('glitchFloor');
 require('blackholePull')
