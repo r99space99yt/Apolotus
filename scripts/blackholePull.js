@@ -18,22 +18,20 @@ function setupBlackholePullLoop(){
             const bulletStrength = 6;
             const maxSpeed = 300;
 
-            // --- Pull units (skip players carrying shield/suit) ---
+            // --- Pull units (skip units with shield/suit) ---
             Groups.unit.intersect(
                 u.x - radius, u.y - radius,
                 radius*2, radius*2,
                 cons(v => {
                     if(!v || v.dead || v === u) return;
 
-                    // Ignore players carrying shield/suit safely
-                    if(v.isPlayer()){
-                        if(v.payload?.item?.name === "apolotus-ShieldBlock") return;
-                        if(v.carry?.item?.name === "apolotus-ShieldBlock") return;
-                        if(v.suitBlock) return;
-                        if(v.hasSuit) return;
-                        if(v._shield) return;
-                    }
+                    // Skip shielded units (player or normal)
+                    if(v.payload && v.payload.item && v.payload.item.name === "apolotus-ShieldBlock") return;
+                    if(v.carry && v.carry.item && v.carry.item.name === "apolotus-ShieldBlock") return;
+                    if(v.hasShieldHP) return; // a custom flag set by your suit script
+                    if(v.suitBlock) return;
 
+                    // Pull calculation
                     const dx = u.x - v.x;
                     const dy = u.y - v.y;
                     const dist = Math.sqrt(dx*dx + dy*dy);
