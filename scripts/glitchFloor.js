@@ -9,3 +9,4 @@ GlitchFloor.frameSpeed = 5;
 GlitchFloor.solid = false;
 
 Vars.content.add(GlitchFloor);
+print('Glitch floor loaded :)')
