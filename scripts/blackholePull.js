@@ -25,7 +25,7 @@ function setupBlackholePullLoop(){
                 cons(v => {
                     if(!v || v.dead || v === u) return;
 
-                    // Ignore players carrying shield/suit
+                    // Skip players carrying shield/suit safely
                     if(v.isPlayer()){
                         if(v.payload && v.payload.item && v.payload.item.name === "apolotus-ShieldBlock") return;
                         if(v.carry && v.carry.item && v.carry.item.name === "apolotus-ShieldBlock") return;
@@ -101,7 +101,7 @@ function setupBlackholePullLoop(){
                 })
             );
 
-            // --- Corrupt nearby floor (20 tiles radius) ---
+            // --- Corrupt nearby floor (20 tiles radius safely) ---
             const tileRadius = 20;
             const tileSize = Vars.tilesize;
 
@@ -111,9 +111,13 @@ function setupBlackholePullLoop(){
                     const wy = u.y + ty * tileSize;
                     const dist = Math.sqrt((wx - u.x)**2 + (wy - u.y)**2);
                     if(dist <= tileRadius * tileSize){
-                        const tile = Vars.world.tile(wx, wy);
-                        if(tile && Math.random() < 0.005){
-                            tile.setFloor(Blocks.empty);
+                        const tile = Vars.world.tileWorld(wx, wy);
+                        if(tile != null && tile.floor() != null && Math.random() < 0.005){
+                            try{
+                                tile.setFloor(Blocks.empty);
+                            } catch(e){
+                                print("Failed to set floor at " + wx + ", " + wy + ": " + e);
+                            }
                         }
                     }
                 }
