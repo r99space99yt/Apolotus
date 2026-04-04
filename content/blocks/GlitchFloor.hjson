@@ -1,0 +1,14 @@
+GlitchFloor:
+  type: floor
+  name: "glitch-floor"
+  solid: false
+  region: "error"  // default texture
+  frames: [
+    "block-dark-metal-full"
+    "bubble-11"
+    "metal-floor-1-edge"
+    "metal-floor-2-edge"
+    "metal-floor-3-edge"
+    "metal-floor-4-edge"
+  ]
+  frameSpeed: 5
