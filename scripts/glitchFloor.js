@@ -1,21 +1,31 @@
-var GlitchFloor = extend(Floor, {});
-GlitchFloor.solid = false;
-GlitchFloor.frameSpeed = 5;
+print("GLITCH FLOOR SCRIPT STARTED");
 
-// manually list your sprites
-var tinySprites = [
-    Core.atlas.find("error"),
-    Core.atlas.find("bubble-11"),
-    Core.atlas.find("metal-floor-1-edge"),
-    Core.atlas.find("metal-floor-2-edge")
+// --- Glitch sprites setup ---
+var glitchSprites = [
+    "error",
+    "block-dark-metal-full",
+    "bubble-11",
+    "metal-floor-4-edge",
+    "metal-floor-3-edge",
+    "metal-floor-2-edge",
+    "metal-floor-1-edge"
 ];
 
-GlitchFloor.region = tinySprites[0];
+// --- Define the Glitch Floor safely ---
+var GlitchFloor = extend(Floor, {
+    draw: function(tile){
+        // Pick a random sprite every frame
+        var spriteName = glitchSprites[Math.floor(Math.random() * glitchSprites.length)];
+        var region = Core.atlas.find(spriteName);
+        if(region != null){
+            Draw.rect(region, tile.worldx(), tile.worldy(), tile.width(), tile.height());
+        }
+    }
+});
+GlitchFloor.solid = false;
 
-GlitchFloor.draw = function(tile){
-    var region = tinySprites[Math.floor(Math.random() * tinySprites.length)];
-    Draw.rect(region, tile.x, tile.y);
-};
-
-Vars.content.add(GlitchFloor);
-print("Random glitch floor loaded with " + tinySprites.length + " sprites :)");
+// Add the glitch floor to content after world is loaded
+Time.runTask(1, function(){
+    Vars.content.add(GlitchFloor);
+    print("Glitch floor loaded :)");
+});
