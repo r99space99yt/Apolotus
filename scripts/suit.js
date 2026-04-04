@@ -1,58 +1,66 @@
 print("SUIT SCRIPT LOADED");
 
-const shieldName = "apolotus-ShieldBlock";
-const maxShieldHP = 950;
+function initSuitScript() {
+    print("SUIT SCRIPT STARTED");
 
-// Map unit ID -> current shield HP
-let shieldHPMap = {};
+    const shieldName = "apolotus-ShieldBlock";
+    const maxHP = 950;
+    const ticksToDestroy = 25 * 60; // 25 seconds at 60 ticks/sec
+    const damagePerTick = maxHP / ticksToDestroy;
+    const blackholeRadius = 300;
 
-function initSuitUI(){
-    // --- Render UI ---
-    Events.on(RenderEvent, cons(() => {
-        Groups.unit.each(cons(u => {
-            if(!u.carry || !u.carry.item || u.carry.item.name !== shieldName) return;
-
-            let hp = shieldHPMap[u.id];
-            if(hp == null) hp = maxShieldHP;
-
-            Draw.z(Layer.overlay + 1);
-            Draw.color(Color.red);
-            Draw.text(Math.floor(hp) + " HP", u.x, u.y - u.hitSize - 10);
-        }));
+    // Assign shield HP when picked up
+    Groups.unit.each(cons(u => {
+        if(u.carry?.item?.name === shieldName && u.shieldHP === undefined){
+            u.shieldHP = maxHP;
+        }
     }));
 
-    // --- Damage shield if near blackhole ---
-    Time.runTask(0, function shieldLoop(){
+    // Main suit loop
+    Time.runTask(0, function suitLoop() {
         Groups.unit.each(cons(u => {
+            // Only check units carrying the shield
             if(!u.carry || !u.carry.item || u.carry.item.name !== shieldName) return;
 
-            let hp = shieldHPMap[u.id];
-            if(hp == null) hp = maxShieldHP;
+            // Initialize HP if missing
+            if(u.shieldHP === undefined) u.shieldHP = maxHP;
 
-            let nearBH = false;
+            let nearBlackhole = false;
+
+            // Detect blackholes near the unit
             Groups.unit.intersect(
-                u.x - 300, u.y - 300, 600, 600,
-                cons(unit => {
-                    if(unit.type && unit.type.name === "apolotus-miniBlackhole") nearBH = true;
+                u.x - blackholeRadius, u.y - blackholeRadius,
+                blackholeRadius * 2, blackholeRadius * 2,
+                cons(bh => {
+                    if(bh.type && bh.type.name === "apolotus-miniBlackhole") nearBlackhole = true;
                 })
             );
 
-            if(nearBH){
-                hp -= maxShieldHP / (25 * 60); // 25 sec to destroy at 60 ticks/sec
-                if(hp <= 0){
-                    hp = 0;
-                    u.carry = null; // drop shield
+            // Apply damage over time
+            if(nearBlackhole){
+                u.shieldHP -= damagePerTick;
+                if(u.shieldHP <= 0){
+                    u.shieldHP = 0;
+                    u.carry = null; // destroy the shield
                 }
             }
 
-            shieldHPMap[u.id] = hp;
+            // Optional: show HP below the unit
+            // Draw in-place to avoid RenderEvent issues
+            Draw.z(1000);
+            Draw.color(Color.red);
+            Draw.text(Math.floor(u.shieldHP) + " HP", u.x, u.y - (u.hitSize || 20) - 10);
         }));
 
-        Time.runTask(0, shieldLoop);
+        Time.runTask(0, suitLoop);
     });
 
     print("SUIT SCRIPT READY");
 }
 
-// Initialize
-initSuitUI();
+// Safe initialization
+try {
+    initSuitScript();
+} catch(e){
+    print("Error initializing suit script: " + e);
+}
