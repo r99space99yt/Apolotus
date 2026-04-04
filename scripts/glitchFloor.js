@@ -1,7 +1,6 @@
-print("GLITCH FLOOR SCRIPT STARTED");
+// GlitchFloor.js - safe version
 
-// Sprites to flicker between
-var glitchSprites = [
+const glitchSprites = [
     "error",
     "block-dark-metal-full",
     "bubble-11",
@@ -9,24 +8,33 @@ var glitchSprites = [
     "metal-floor-3-edge",
     "metal-floor-2-edge",
     "metal-floor-1-edge"
-];
+].map(Core.atlas.find).filter(r => r != null);
 
-// Use JavaAdapter to avoid adapter/global errors
-var GlitchFloor = new JavaAdapter(Floor, {
+var GlitchFloor = JavaAdapter(Floor, {}, {
     draw: function(tile){
-        // pick a random sprite each frame
-        var region = Core.atlas.find(glitchSprites[Math.floor(Math.random() * glitchSprites.length)]);
-        if(region != null){
-            Draw.rect(region, tile.worldx(), tile.worldy(), tile.width(), tile.height());
+        if(!tile) return;
+        if(glitchSprites.length === 0) return;
+
+        // Pick random sprite
+        var region = glitchSprites[Math.floor(Math.random() * glitchSprites.length)];
+        if(!region) return;
+
+        // Safe draw
+        Draw.rect(region, tile.worldx(), tile.worldy(), tile.width(), tile.height());
+    },
+    load: function(){
+        try {
+            // Ensure at least the first sprite is loaded for the Floor
+            this.region = glitchSprites[0] || Core.atlas.find("error");
+        } catch(e){
+            print("GlitchFloor load fail: " + e);
         }
     }
 });
 
-// Non-solid floor
+// Optional properties
+GlitchFloor.frameSpeed = 5;
 GlitchFloor.solid = false;
 
-// Add safely after 1 tick
-Time.runTask(1, function(){
-    Vars.content.add(GlitchFloor);
-    print("Glitch floor loaded :)");
-});
+Vars.content.add(GlitchFloor);
+print("Glitch floor loaded safely :)");
