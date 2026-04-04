@@ -1,22 +1,19 @@
 print("BLACKHOLE PULL SCRIPT STARTED");
 
-function setupBlackholePullLoop(){
+function setupBlackholePullLoop() {
     const blackholeType = Vars.content.getByName(ContentType.unit, "apolotus-miniBlackhole");
-    if(!blackholeType){
+    const GlitchFloor = Vars.content.getByName(ContentType.block, "apolotus-GlitchFloor");
+
+    // Retry if content not loaded yet
+    if(!blackholeType || !GlitchFloor){
         Time.runTask(1, setupBlackholePullLoop);
         return;
     }
 
-    print("BLACKHOLE TYPE FOUND: " + blackholeType);
+    print("BLACKHOLE TYPE FOUND: " + blackholeType + ", GlitchFloor: " + GlitchFloor);
 
-    // Fetch the glitch floor once
-    const glitchFloor = Vars.content.getByName(ContentType.floor, "apolotus-GlitchFloor");
-    if(!glitchFloor){
-        print("GlitchFloor not found!");
-    }
-
-    Time.runTask(0, function pullLoop(){
-        Groups.unit.each(cons(function(u){
+    Time.runTask(0, function pullLoop() {
+        Groups.unit.each(cons(function(u) {
             if(!u.type || u.type.name !== "apolotus-miniBlackhole") return;
 
             var radius = 300;
@@ -24,14 +21,13 @@ function setupBlackholePullLoop(){
             var bulletStrength = 6;
             var maxSpeed = 300;
 
-            // --- Pull nearby units (with shield skip) ---
+            // --- Pull nearby units (shield skip) ---
             Groups.unit.intersect(
                 u.x - radius, u.y - radius,
                 radius * 2, radius * 2,
-                cons(function(v){
+                cons(function(v) {
                     if(!v || v.dead || v === u) return;
 
-                    // Safe shield skip
                     if(v.isPlayer()){
                         if(v.payload && v.payload.item && v.payload.item.name === "apolotus-ShieldBlock") return;
                         if(v.carry && v.carry.item && v.carry.item.name === "apolotus-ShieldBlock") return;
@@ -40,7 +36,6 @@ function setupBlackholePullLoop(){
                         if(v._shield) return;
                     }
 
-                    // Pull math
                     var dx = u.x - v.x;
                     var dy = u.y - v.y;
                     var dist = Math.sqrt(dx*dx + dy*dy);
@@ -67,7 +62,7 @@ function setupBlackholePullLoop(){
             Groups.bullet.intersect(
                 u.x - radius, u.y - radius,
                 radius * 2, radius * 2,
-                cons(function(b){
+                cons(function(b) {
                     if(!b) return;
 
                     var dx = u.x - b.x;
@@ -99,9 +94,9 @@ function setupBlackholePullLoop(){
             Groups.unit.intersect(
                 u.x - 400, u.y - 400,
                 800, 800,
-                cons(function(v2){
+                cons(function(v2) {
                     if(!v2 || v2.dead || v2 === u || !v2.type) return;
-                    if(v2.type.name === "apolotus-miniBlackhole"){
+                    if(v2.type.name === "apolotus-miniBlackhole") {
                         Fx.lightning.at(u.x, u.y, v2.x, v2.y);
                     }
                 })
@@ -118,12 +113,13 @@ function setupBlackholePullLoop(){
                     var ddx = wx - u.x;
                     var ddy = wy - u.y;
                     var distt = Math.sqrt(ddx*ddx + ddy*ddy);
+
                     if(distt <= tileRadius * tileSize){
                         var tile = Vars.world.tileWorld(wx, wy);
-                        if(tile != null && tile.floor() != null && glitchFloor != null){
+                        if(tile && tile.floor()){
                             if(Math.random() < 0.005){
                                 try {
-                                    tile.setFloor(glitchFloor);
+                                    tile.setFloor(GlitchFloor);
                                 } catch(e){
                                     print("Floor corrupt fail: " + e);
                                 }
@@ -141,7 +137,8 @@ function setupBlackholePullLoop(){
     print("BLACKHOLE SCRIPT LOOP READY");
 }
 
-if(Vars.world != null){
+// Initialize
+if(Vars.world) {
     setupBlackholePullLoop();
 } else {
     Events.on(WorldLoadEvent, cons(function() {
