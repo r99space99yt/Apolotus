@@ -1,6 +1,6 @@
 print("GLITCH FLOOR SCRIPT STARTED");
 
-// --- Glitch sprites setup ---
+// Sprites to flicker between
 var glitchSprites = [
     "error",
     "block-dark-metal-full",
@@ -11,20 +11,21 @@ var glitchSprites = [
     "metal-floor-1-edge"
 ];
 
-// --- Define the Glitch Floor safely ---
-var GlitchFloor = extend(Floor, {
+// Use JavaAdapter to avoid adapter/global errors
+var GlitchFloor = new JavaAdapter(Floor, {
     draw: function(tile){
-        // Pick a random sprite every frame
-        var spriteName = glitchSprites[Math.floor(Math.random() * glitchSprites.length)];
-        var region = Core.atlas.find(spriteName);
+        // pick a random sprite each frame
+        var region = Core.atlas.find(glitchSprites[Math.floor(Math.random() * glitchSprites.length)]);
         if(region != null){
             Draw.rect(region, tile.worldx(), tile.worldy(), tile.width(), tile.height());
         }
     }
 });
+
+// Non-solid floor
 GlitchFloor.solid = false;
 
-// Add the glitch floor to content after world is loaded
+// Add safely after 1 tick
 Time.runTask(1, function(){
     Vars.content.add(GlitchFloor);
     print("Glitch floor loaded :)");
